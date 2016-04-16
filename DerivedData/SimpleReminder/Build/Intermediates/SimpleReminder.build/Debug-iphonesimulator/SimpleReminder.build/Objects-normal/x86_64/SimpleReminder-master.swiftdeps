@@ -1,0 +1,6 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
+options: "765b9837d0b860853c8ca80178f048fc"
+build_time: [514120393, 788958000]
+inputs:
+  "/Users/alper/Documents/Developer/iOS - Swift/Projects/SimpleReminder/SimpleReminder/ViewController.swift": [514120389, 0]
+  "/Users/alper/Documents/Developer/iOS - Swift/Projects/SimpleReminder/SimpleReminder/AppDelegate.swift": [514120389, 0]
