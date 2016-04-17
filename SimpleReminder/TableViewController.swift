@@ -11,15 +11,36 @@ import UIKit
 class TableViewController: UITableViewController {
     
 // MARK: - Data Model
-    var row0 = "Fuerteventura"
-    var checked0 = false{didSet{print(checked0)}}// test : to observe checked0
-    var row1 = "Cape Town", checked1 = true
-    var row2 = "Istanbul" , checked2 = false
-    var row3 = "Podersdorf" , checked3 = true
-    var row4 = "Imroz" , checked4 = true
-    var row5 = "Alacati" , checked5 = false
-
     
+    var row0Item : ReminderItem?
+    var row1Item : ReminderItem?
+    var row2Item : ReminderItem?
+    var row3Item : ReminderItem?
+    var row4Item : ReminderItem?
+
+    required init?(coder aDecoder: NSCoder) {
+        row0Item = ReminderItem()
+        row0Item?.text = "Fuerteventura"
+        row0Item?.isChecked = false
+        
+        row1Item = ReminderItem()
+        row1Item?.text = "Cape Town"
+        row1Item?.isChecked = true
+        
+        row2Item = ReminderItem()
+        row2Item?.text = "Istanbul"
+        row2Item?.isChecked = true
+        
+        row3Item = ReminderItem()
+        row3Item?.text = "Cape Town"
+        row3Item?.isChecked = true
+        
+        row4Item = ReminderItem()
+        row4Item?.text = "Alacati"
+        row4Item?.isChecked = true
+        
+        super.init(coder: aDecoder)
+    }
     
 // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
@@ -39,21 +60,21 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ReminderGroupItem", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ReminderItem", forIndexPath: indexPath)
         
         let label = cell.viewWithTag(100) as? UILabel
         
         
         if indexPath.row == 0 {
-            label?.text = row0
+            label?.text = row0Item?.text
         }else if indexPath.row == 1 {
-            label?.text = row1
+            label?.text = row1Item?.text
         }else if indexPath.row == 2 {
-            label?.text = row2
+            label?.text = row2Item?.text
         }else if indexPath.row == 3 {
-            label?.text = row3
+            label?.text = row3Item?.text
         }else if indexPath.row == 4{
-            label?.text = row4
+            label?.text = row4Item?.text
         }else {
             label?.text = "Empty"
         }
@@ -68,7 +89,6 @@ class TableViewController: UITableViewController {
         
         //returns a cell object
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath)
-        var selectedRow = false
         /*
          Because it is theoretically possible that there is no cell at the specified index-path,
          for example if that row isn’t visible, you need to use the special if let or guard statement.
@@ -77,28 +97,20 @@ class TableViewController: UITableViewController {
             return}
         
         if indexPath.row == 0 {
-            checked0 = !checked0
-            selectedRow = checked0
+            (row0Item!.isChecked) = !(row0Item!.isChecked)
         } else if indexPath.row == 1 {
-            checked1 = !checked1
-            selectedRow = checked1
+            (row1Item!.isChecked) = !(row1Item!.isChecked)
         } else if indexPath.row == 2 {
-            checked2 = !checked2
-            selectedRow = checked2
+            (row2Item!.isChecked) = !(row2Item!.isChecked)
         } else if indexPath.row == 3 {
-            checked3 = !checked3
-            selectedRow = checked3
+            (row3Item!.isChecked) = !(row3Item!.isChecked)
         } else if indexPath.row == 4 {
-            checked4 = !checked4
-            selectedRow = checked4
+            (row4Item!.isChecked) = !(row4Item!.isChecked)
+            
         }
         
-        if selectedRow{
-            cell.accessoryType = .Checkmark
-        }else{
-            cell.accessoryType = .None
-        }
-            
+        configureCheckmarkForCell(cell, indexPath: indexPath)
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
@@ -109,15 +121,15 @@ class TableViewController: UITableViewController {
         var isChecked = false
         
         if indexPath.row == 0 {
-            isChecked = checked0
+            isChecked = (row0Item!.isChecked)
         }else if indexPath.row == 1 {
-            isChecked = checked1
+            isChecked = (row1Item!.isChecked)
         }else if indexPath.row == 2 {
-            isChecked = checked2
+            isChecked = (row2Item!.isChecked)
         }else if indexPath.row == 3 {
-            isChecked = checked3
+            isChecked = (row3Item!.isChecked)
         }else if indexPath.row == 4{
-            isChecked = checked4
+            isChecked = (row4Item!.isChecked)
         }else {
             isChecked = false
         }

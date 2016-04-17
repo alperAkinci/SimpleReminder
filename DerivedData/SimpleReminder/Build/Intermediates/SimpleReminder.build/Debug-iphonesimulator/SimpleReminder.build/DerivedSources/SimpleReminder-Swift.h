@@ -122,11 +122,10 @@ SWIFT_CLASS("_TtC14SimpleReminder11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSCoder;
 @class UITableView;
 @class NSIndexPath;
 @class UITableViewCell;
-@class NSBundle;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC14SimpleReminder19TableViewController")
 @interface TableViewController : UITableViewController
@@ -142,15 +141,13 @@ SWIFT_CLASS("_TtC14SimpleReminder19TableViewController")
 @property (nonatomic) BOOL checked4;
 @property (nonatomic, copy) NSString * _Nonnull row5;
 @property (nonatomic) BOOL checked5;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)configureCheckmarkForCell:(UITableViewCell * _Nonnull)cell indexPath:(NSIndexPath * _Nonnull)indexPath;
-- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #pragma clang diagnostic pop
