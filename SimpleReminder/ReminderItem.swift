@@ -14,4 +14,9 @@ class ReminderItem {
     var text = " "
     var isChecked = false
     
+    
+    func checkmarkToggled(){
+        isChecked = !isChecked
+    }
+    
 }

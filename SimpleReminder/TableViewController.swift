@@ -10,34 +10,42 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-// MARK: - Data Model
+    // MARK: - Data Model
     
-    var row0Item : ReminderItem?
-    var row1Item : ReminderItem?
-    var row2Item : ReminderItem?
-    var row3Item : ReminderItem?
-    var row4Item : ReminderItem?
-
+    var items :[ReminderItem]
+    
     required init?(coder aDecoder: NSCoder) {
-        row0Item = ReminderItem()
+        
+        items = [ReminderItem]()
+        
+        let row0Item : ReminderItem? = ReminderItem()
         row0Item?.text = "Fuerteventura"
         row0Item?.isChecked = false
+        items.append(row0Item!)
         
-        row1Item = ReminderItem()
+        let row1Item : ReminderItem? = ReminderItem()
         row1Item?.text = "Cape Town"
         row1Item?.isChecked = true
+        items.append(row1Item!)
+
         
-        row2Item = ReminderItem()
+        let row2Item : ReminderItem? = ReminderItem()
         row2Item?.text = "Istanbul"
         row2Item?.isChecked = true
+        items.append(row2Item!)
+
         
-        row3Item = ReminderItem()
-        row3Item?.text = "Cape Town"
+        let row3Item : ReminderItem? = ReminderItem()
+        row3Item?.text = "Podersdorf"
         row3Item?.isChecked = true
+        items.append(row3Item!)
+
         
-        row4Item = ReminderItem()
-        row4Item?.text = "Alacati"
+        let row4Item : ReminderItem? = ReminderItem()
+        row4Item?.text = "Maui"
         row4Item?.isChecked = true
+        items.append(row4Item!)
+
         
         super.init(coder: aDecoder)
     }
@@ -56,60 +64,36 @@ class TableViewController: UITableViewController {
     
 //MARK: - TableView Delegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return items.count
     }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ReminderItem", forIndexPath: indexPath)
         
-        let label = cell.viewWithTag(100) as? UILabel
-        
-        
-        if indexPath.row == 0 {
-            label?.text = row0Item?.text
-        }else if indexPath.row == 1 {
-            label?.text = row1Item?.text
-        }else if indexPath.row == 2 {
-            label?.text = row2Item?.text
-        }else if indexPath.row == 3 {
-            label?.text = row3Item?.text
-        }else if indexPath.row == 4{
-            label?.text = row4Item?.text
-        }else {
-            label?.text = "Empty"
-        }
-        
-        configureCheckmarkForCell(cell, indexPath: indexPath)
-        print("New Row : \(indexPath.row)")
+        let item = items[indexPath.row]
+        configureTextForCell(cell, withRemiderItem: item)
+        configureCheckmarkForCell(cell, withRemiderItem: item)
+       
+        //print("New Row : \(indexPath.row)")
         
         return cell
     }
+    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         //returns a cell object
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath)
-        /*
-         Because it is theoretically possible that there is no cell at the specified index-path,
-         for example if that row isn’t visible, you need to use the special if let or guard statement.
-         */
+        
+        //selected cell could be nil (ex: if its invisible)
         guard let cell = selectedCell else {print("Cell is nil")
             return}
         
-        if indexPath.row == 0 {
-            (row0Item!.isChecked) = !(row0Item!.isChecked)
-        } else if indexPath.row == 1 {
-            (row1Item!.isChecked) = !(row1Item!.isChecked)
-        } else if indexPath.row == 2 {
-            (row2Item!.isChecked) = !(row2Item!.isChecked)
-        } else if indexPath.row == 3 {
-            (row3Item!.isChecked) = !(row3Item!.isChecked)
-        } else if indexPath.row == 4 {
-            (row4Item!.isChecked) = !(row4Item!.isChecked)
-            
-        }
+        let item = items[indexPath.row]
         
-        configureCheckmarkForCell(cell, indexPath: indexPath)
+        item.checkmarkToggled()
+        configureCheckmarkForCell(cell, withRemiderItem: item)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
@@ -117,28 +101,22 @@ class TableViewController: UITableViewController {
     
     
 //MARK: - Convenience Methods
-    func configureCheckmarkForCell(cell : UITableViewCell,indexPath: NSIndexPath )  {
-        var isChecked = false
+    func configureCheckmarkForCell(cell : UITableViewCell,withRemiderItem item : ReminderItem )  {
         
-        if indexPath.row == 0 {
-            isChecked = (row0Item!.isChecked)
-        }else if indexPath.row == 1 {
-            isChecked = (row1Item!.isChecked)
-        }else if indexPath.row == 2 {
-            isChecked = (row2Item!.isChecked)
-        }else if indexPath.row == 3 {
-            isChecked = (row3Item!.isChecked)
-        }else if indexPath.row == 4{
-            isChecked = (row4Item!.isChecked)
-        }else {
-            isChecked = false
-        }
-
-        if isChecked{
+        if item.isChecked{
             cell.accessoryType = .Checkmark
         }else{
             cell.accessoryType = .None
         }
+        
+    }
+    
+   
+    func configureTextForCell(cell : UITableViewCell ,withRemiderItem item : ReminderItem ){
+    
+        let label = cell.viewWithTag(100) as? UILabel
+        
+        label?.text = item.text
         
     }
 

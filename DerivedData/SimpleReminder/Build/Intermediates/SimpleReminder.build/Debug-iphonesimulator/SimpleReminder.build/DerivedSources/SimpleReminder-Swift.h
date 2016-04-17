@@ -129,25 +129,12 @@ SWIFT_CLASS("_TtC14SimpleReminder11AppDelegate")
 
 SWIFT_CLASS("_TtC14SimpleReminder19TableViewController")
 @interface TableViewController : UITableViewController
-@property (nonatomic, copy) NSString * _Nonnull row0;
-@property (nonatomic) BOOL checked0;
-@property (nonatomic, copy) NSString * _Nonnull row1;
-@property (nonatomic) BOOL checked1;
-@property (nonatomic, copy) NSString * _Nonnull row2;
-@property (nonatomic) BOOL checked2;
-@property (nonatomic, copy) NSString * _Nonnull row3;
-@property (nonatomic) BOOL checked3;
-@property (nonatomic, copy) NSString * _Nonnull row4;
-@property (nonatomic) BOOL checked4;
-@property (nonatomic, copy) NSString * _Nonnull row5;
-@property (nonatomic) BOOL checked5;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (void)configureCheckmarkForCell:(UITableViewCell * _Nonnull)cell indexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 #pragma clang diagnostic pop

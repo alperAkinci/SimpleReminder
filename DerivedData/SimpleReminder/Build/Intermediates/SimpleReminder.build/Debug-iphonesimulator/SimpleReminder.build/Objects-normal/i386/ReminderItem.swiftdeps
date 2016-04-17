@@ -7,12 +7,15 @@ provides-member:
 - ["C14SimpleReminder12ReminderItem", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "UnicodeScalarType"
 - "BooleanLiteralType"
 - "ReminderItem"
+- "UnicodeScalarType"
 - "StringLiteralType"
+- !private "!"
 depends-member:
+- !private ["Ps9AnyObject", "isChecked"]
 - ["Ps9AnyObject", ""]
+- ["C14SimpleReminder12ReminderItem", "checkmarkToggled"]
 - ["C14SimpleReminder12ReminderItem", "deinit"]
 - ["C14SimpleReminder12ReminderItem", "init"]
 - ["C14SimpleReminder12ReminderItem", "isChecked"]
@@ -31,4 +34,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreData.swiftmodule"
-interface-hash: "a3fe3d84186f5d90b0615d5c82db4765"
+interface-hash: "2253b6a12400333a6e2ece3b259066b9"
