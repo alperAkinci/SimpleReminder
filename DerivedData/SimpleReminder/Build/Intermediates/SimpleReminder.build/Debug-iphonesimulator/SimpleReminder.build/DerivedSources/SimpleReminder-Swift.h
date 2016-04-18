@@ -123,6 +123,7 @@ SWIFT_CLASS("_TtC14SimpleReminder11AppDelegate")
 @end
 
 @class NSCoder;
+@class UIBarButtonItem;
 @class UITableView;
 @class NSIndexPath;
 @class UITableViewCell;
@@ -130,11 +131,13 @@ SWIFT_CLASS("_TtC14SimpleReminder11AppDelegate")
 SWIFT_CLASS("_TtC14SimpleReminder19TableViewController")
 @interface TableViewController : UITableViewController
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (IBAction)addItem:(UIBarButtonItem * _Nonnull)sender;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 #pragma clang diagnostic pop

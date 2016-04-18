@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U5k-Bh-e7q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3Zy-BT-C9L">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--My Reminders-->
         <scene sceneID="ehj-vk-Tzv">
             <objects>
                 <tableViewController id="U5k-Bh-e7q" customClass="TableViewController" customModule="SimpleReminder" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,7 +16,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ReminderItem" id="MD7-Xo-e3d">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MD7-Xo-e3d" id="GRW-L6-htw">
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="43"/>
@@ -43,8 +43,33 @@
                             <outlet property="delegate" destination="U5k-Bh-e7q" id="hfK-PU-hq5"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="My Reminders" id="rg7-ET-dld">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="I3t-OC-vzC">
+                            <connections>
+                                <action selector="addItem:" destination="U5k-Bh-e7q" id="ZuJ-kX-hQf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfG-8g-fv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="303"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="p8P-cT-dpw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Zy-BT-C9L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yfx-E9-1ZR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="U5k-Bh-e7q" kind="relationship" relationship="rootViewController" id="R9c-GT-xE5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTt-dG-J8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224" y="303"/>
         </scene>

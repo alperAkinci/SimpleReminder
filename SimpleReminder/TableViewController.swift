@@ -50,6 +50,22 @@ class TableViewController: UITableViewController {
         super.init(coder: aDecoder)
     }
     
+    @IBAction func addItem(sender: UIBarButtonItem) {
+        
+        let indexPath = NSIndexPath(forRow: items.count, inSection: 0)
+        
+        let row5Item : ReminderItem? = ReminderItem()
+        row5Item?.text = "Holaaaa"
+        row5Item?.isChecked = false
+        items.append(row5Item!)
+        
+        //tableView.beginUpdates()
+        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        //tableView.endUpdates()
+    }
+    
+    
+    
 // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +113,14 @@ class TableViewController: UITableViewController {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            items.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
     }
     
     
