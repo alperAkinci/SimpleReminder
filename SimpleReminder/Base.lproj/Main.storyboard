@@ -9,7 +9,7 @@
         <!--My Reminders-->
         <scene sceneID="ehj-vk-Tzv">
             <objects>
-                <tableViewController id="U5k-Bh-e7q" customClass="TableViewController" customModule="SimpleReminder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="U5k-Bh-e7q" customClass="ReminderListViewController" customModule="SimpleReminder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QMX-HN-xPT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,14 +46,14 @@
                     <navigationItem key="navigationItem" title="My Reminders" id="rg7-ET-dld">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="I3t-OC-vzC">
                             <connections>
-                                <action selector="addItem:" destination="U5k-Bh-e7q" id="ZuJ-kX-hQf"/>
+                                <segue destination="c25-eF-Tio" kind="presentation" id="N9I-zN-eiU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfG-8g-fv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="303"/>
+            <point key="canvasLocation" x="1032" y="303"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p8P-cT-dpw">
@@ -72,6 +72,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTt-dG-J8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224" y="303"/>
+        </scene>
+        <!--Add Reminder-->
+        <scene sceneID="RdT-HB-h6P">
+            <objects>
+                <tableViewController id="xA6-fD-hBR" customClass="AddReminderItemViewController" customModule="SimpleReminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="wnl-9N-rl8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="EF1-Hu-enV">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="gDb-pH-MiE">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gDb-pH-MiE" id="dfA-MG-KKL">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crz-HX-HtP">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="xA6-fD-hBR" id="hSA-DB-Ld1"/>
+                            <outlet property="delegate" destination="xA6-fD-hBR" id="s0v-vQ-emx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Reminder" id="Jmh-2F-fab">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1Xr-FQ-K33">
+                            <connections>
+                                <action selector="cancelBtnPressed:" destination="xA6-fD-hBR" id="85z-f8-8l0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="QkX-2Q-HiE">
+                            <connections>
+                                <action selector="doneBtnPressed:" destination="xA6-fD-hBR" id="pUa-9n-Qjq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T6I-6u-dT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2806" y="303"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZIu-L9-lFx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c25-eF-Tio" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AG9-qR-aFI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xA6-fD-hBR" kind="relationship" relationship="rootViewController" id="fbx-va-NVw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJf-MU-Tpn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1971" y="303"/>
         </scene>
     </scenes>
 </document>

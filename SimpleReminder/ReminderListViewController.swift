@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class ReminderListViewController: UITableViewController {
     
     // MARK: - Data Model
     

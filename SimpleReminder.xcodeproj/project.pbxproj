@@ -8,24 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		4E7F0C101CC255C500EF7239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F0C0F1CC255C500EF7239 /* AppDelegate.swift */; };
-		4E7F0C121CC255C500EF7239 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F0C111CC255C500EF7239 /* TableViewController.swift */; };
+		4E7F0C121CC255C500EF7239 /* ReminderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F0C111CC255C500EF7239 /* ReminderListViewController.swift */; };
 		4E7F0C151CC255C500EF7239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7F0C131CC255C500EF7239 /* Main.storyboard */; };
 		4E7F0C181CC255C500EF7239 /* SimpleReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F0C161CC255C500EF7239 /* SimpleReminder.xcdatamodeld */; };
 		4E7F0C1A1CC255C500EF7239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7F0C191CC255C500EF7239 /* Assets.xcassets */; };
 		4E7F0C1D1CC255C500EF7239 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7F0C1B1CC255C500EF7239 /* LaunchScreen.storyboard */; };
 		4E7F0C251CC3B73F00EF7239 /* ReminderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F0C241CC3B73F00EF7239 /* ReminderItem.swift */; };
+		4E7F0C2B1CC5182E00EF7239 /* AddReminderItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F0C2A1CC5182E00EF7239 /* AddReminderItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4E7F0C0C1CC255C500EF7239 /* SimpleReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7F0C0F1CC255C500EF7239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E7F0C111CC255C500EF7239 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		4E7F0C111CC255C500EF7239 /* ReminderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListViewController.swift; sourceTree = "<group>"; };
 		4E7F0C141CC255C500EF7239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E7F0C171CC255C500EF7239 /* SimpleReminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleReminder.xcdatamodel; sourceTree = "<group>"; };
 		4E7F0C191CC255C500EF7239 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E7F0C1C1CC255C500EF7239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E7F0C1E1CC255C500EF7239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E7F0C241CC3B73F00EF7239 /* ReminderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderItem.swift; sourceTree = "<group>"; };
+		4E7F0C2A1CC5182E00EF7239 /* AddReminderItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				4E7F0C0F1CC255C500EF7239 /* AppDelegate.swift */,
-				4E7F0C111CC255C500EF7239 /* TableViewController.swift */,
+				4E7F0C111CC255C500EF7239 /* ReminderListViewController.swift */,
+				4E7F0C2A1CC5182E00EF7239 /* AddReminderItemViewController.swift */,
 				4E7F0C241CC3B73F00EF7239 /* ReminderItem.swift */,
 				4E7F0C131CC255C500EF7239 /* Main.storyboard */,
 				4E7F0C191CC255C500EF7239 /* Assets.xcassets */,
@@ -142,9 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E7F0C121CC255C500EF7239 /* TableViewController.swift in Sources */,
+				4E7F0C121CC255C500EF7239 /* ReminderListViewController.swift in Sources */,
 				4E7F0C101CC255C500EF7239 /* AppDelegate.swift in Sources */,
 				4E7F0C251CC3B73F00EF7239 /* ReminderItem.swift in Sources */,
+				4E7F0C2B1CC5182E00EF7239 /* AddReminderItemViewController.swift in Sources */,
 				4E7F0C181CC255C500EF7239 /* SimpleReminder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

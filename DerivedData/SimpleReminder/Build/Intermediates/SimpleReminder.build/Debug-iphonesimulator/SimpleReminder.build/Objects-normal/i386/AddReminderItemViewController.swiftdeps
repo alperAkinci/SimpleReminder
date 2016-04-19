@@ -1,0 +1,198 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "AddReminderItemViewController"
+provides-nominal:
+- "C14SimpleReminder29AddReminderItemViewController"
+provides-member:
+- ["C14SimpleReminder29AddReminderItemViewController", ""]
+provides-dynamic-lookup:
+- "doneBtnPressed"
+- "tableView"
+- "cancelBtnPressed"
+depends-top-level:
+- "NSIndexPath"
+- "UITableViewController"
+- "UITableView"
+- "UIBarButtonItem"
+- !private "BooleanLiteralType"
+- "AddReminderItemViewController"
+depends-member:
+- ["C14SimpleReminder29AddReminderItemViewController", "NSIndexPath"]
+- ["C14SimpleReminder29AddReminderItemViewController", "UIBarButtonItem"]
+- ["C14SimpleReminder29AddReminderItemViewController", "UITableView"]
+- ["C14SimpleReminder29AddReminderItemViewController", "cancelBtnPressed"]
+- ["C14SimpleReminder29AddReminderItemViewController", "deinit"]
+- !private ["C14SimpleReminder29AddReminderItemViewController", "dismissViewControllerAnimated"]
+- ["C14SimpleReminder29AddReminderItemViewController", "doneBtnPressed"]
+- ["C14SimpleReminder29AddReminderItemViewController", "init"]
+- ["C14SimpleReminder29AddReminderItemViewController", "tableView"]
+- ["Ps9AnyObject", "cancelBtnPressed"]
+- !private ["Ps9AnyObject", "dismissViewControllerAnimated"]
+- ["Ps9AnyObject", "doneBtnPressed"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "tableView"]
+- ["Ps9AnyObject", ""]
+- ["Ps11CVarArgType", "cancelBtnPressed"]
+- !private ["Ps11CVarArgType", "dismissViewControllerAnimated"]
+- ["Ps11CVarArgType", "doneBtnPressed"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "tableView"]
+- ["Ps11CVarArgType", ""]
+- ["Ps28CustomDebugStringConvertible", "cancelBtnPressed"]
+- !private ["Ps28CustomDebugStringConvertible", "dismissViewControllerAnimated"]
+- ["Ps28CustomDebugStringConvertible", "doneBtnPressed"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "tableView"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- ["Ps23CustomStringConvertible", "cancelBtnPressed"]
+- !private ["Ps23CustomStringConvertible", "dismissViewControllerAnimated"]
+- ["Ps23CustomStringConvertible", "doneBtnPressed"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "tableView"]
+- ["Ps23CustomStringConvertible", ""]
+- ["Ps9Equatable", "cancelBtnPressed"]
+- !private ["Ps9Equatable", "dismissViewControllerAnimated"]
+- ["Ps9Equatable", "doneBtnPressed"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "tableView"]
+- ["Ps9Equatable", ""]
+- ["Ps8Hashable", "cancelBtnPressed"]
+- !private ["Ps8Hashable", "dismissViewControllerAnimated"]
+- ["Ps8Hashable", "doneBtnPressed"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "tableView"]
+- ["Ps8Hashable", ""]
+- ["PSo8NSCoding", "cancelBtnPressed"]
+- !private ["PSo8NSCoding", "dismissViewControllerAnimated"]
+- ["PSo8NSCoding", "doneBtnPressed"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "tableView"]
+- ["PSo8NSCoding", ""]
+- ["PSo26NSExtensionRequestHandling", "cancelBtnPressed"]
+- !private ["PSo26NSExtensionRequestHandling", "dismissViewControllerAnimated"]
+- ["PSo26NSExtensionRequestHandling", "doneBtnPressed"]
+- ["PSo26NSExtensionRequestHandling", "init"]
+- ["PSo26NSExtensionRequestHandling", "tableView"]
+- ["PSo26NSExtensionRequestHandling", ""]
+- ["CSo8NSObject", "NSIndexPath"]
+- ["CSo8NSObject", "UIBarButtonItem"]
+- ["CSo8NSObject", "UITableView"]
+- ["CSo8NSObject", "cancelBtnPressed"]
+- !private ["CSo8NSObject", "dismissViewControllerAnimated"]
+- ["CSo8NSObject", "doneBtnPressed"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "tableView"]
+- ["PSo16NSObjectProtocol", "cancelBtnPressed"]
+- !private ["PSo16NSObjectProtocol", "dismissViewControllerAnimated"]
+- ["PSo16NSObjectProtocol", "doneBtnPressed"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "tableView"]
+- ["PSo16NSObjectProtocol", ""]
+- ["PSo21UIAppearanceContainer", "cancelBtnPressed"]
+- !private ["PSo21UIAppearanceContainer", "dismissViewControllerAnimated"]
+- ["PSo21UIAppearanceContainer", "doneBtnPressed"]
+- ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "tableView"]
+- ["PSo21UIAppearanceContainer", ""]
+- ["PSo18UIContentContainer", "cancelBtnPressed"]
+- !private ["PSo18UIContentContainer", "dismissViewControllerAnimated"]
+- ["PSo18UIContentContainer", "doneBtnPressed"]
+- ["PSo18UIContentContainer", "init"]
+- ["PSo18UIContentContainer", "tableView"]
+- ["PSo18UIContentContainer", ""]
+- ["PSo18UIFocusEnvironment", "cancelBtnPressed"]
+- !private ["PSo18UIFocusEnvironment", "dismissViewControllerAnimated"]
+- ["PSo18UIFocusEnvironment", "doneBtnPressed"]
+- ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "tableView"]
+- ["PSo18UIFocusEnvironment", ""]
+- ["CSo11UIResponder", "NSIndexPath"]
+- ["CSo11UIResponder", "UIBarButtonItem"]
+- ["CSo11UIResponder", "UITableView"]
+- ["CSo11UIResponder", "cancelBtnPressed"]
+- !private ["CSo11UIResponder", "dismissViewControllerAnimated"]
+- ["CSo11UIResponder", "doneBtnPressed"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "tableView"]
+- ["PSo20UIScrollViewDelegate", "cancelBtnPressed"]
+- !private ["PSo20UIScrollViewDelegate", "dismissViewControllerAnimated"]
+- ["PSo20UIScrollViewDelegate", "doneBtnPressed"]
+- ["PSo20UIScrollViewDelegate", "init"]
+- ["PSo20UIScrollViewDelegate", "tableView"]
+- ["PSo20UIScrollViewDelegate", ""]
+- ["PSo16UIStateRestoring", "cancelBtnPressed"]
+- !private ["PSo16UIStateRestoring", "dismissViewControllerAnimated"]
+- ["PSo16UIStateRestoring", "doneBtnPressed"]
+- ["PSo16UIStateRestoring", "init"]
+- ["PSo16UIStateRestoring", "tableView"]
+- ["PSo16UIStateRestoring", ""]
+- ["CSo21UITableViewController", "NSIndexPath"]
+- ["CSo21UITableViewController", "UIBarButtonItem"]
+- ["CSo21UITableViewController", "UITableView"]
+- ["CSo21UITableViewController", "cancelBtnPressed"]
+- !private ["CSo21UITableViewController", "dismissViewControllerAnimated"]
+- ["CSo21UITableViewController", "doneBtnPressed"]
+- ["CSo21UITableViewController", "init"]
+- ["CSo21UITableViewController", "tableView"]
+- ["CSo21UITableViewController", ""]
+- ["PSo21UITableViewDataSource", "cancelBtnPressed"]
+- !private ["PSo21UITableViewDataSource", "dismissViewControllerAnimated"]
+- ["PSo21UITableViewDataSource", "doneBtnPressed"]
+- ["PSo21UITableViewDataSource", "init"]
+- ["PSo21UITableViewDataSource", "tableView"]
+- ["PSo21UITableViewDataSource", ""]
+- ["PSo19UITableViewDelegate", "cancelBtnPressed"]
+- !private ["PSo19UITableViewDelegate", "dismissViewControllerAnimated"]
+- ["PSo19UITableViewDelegate", "doneBtnPressed"]
+- ["PSo19UITableViewDelegate", "init"]
+- ["PSo19UITableViewDelegate", "tableView"]
+- ["PSo19UITableViewDelegate", ""]
+- ["PSo18UITraitEnvironment", "cancelBtnPressed"]
+- !private ["PSo18UITraitEnvironment", "dismissViewControllerAnimated"]
+- ["PSo18UITraitEnvironment", "doneBtnPressed"]
+- ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "tableView"]
+- ["PSo18UITraitEnvironment", ""]
+- ["CSo16UIViewController", "NSIndexPath"]
+- ["CSo16UIViewController", "UIBarButtonItem"]
+- ["CSo16UIViewController", "UITableView"]
+- ["CSo16UIViewController", "cancelBtnPressed"]
+- !private ["CSo16UIViewController", "dismissViewControllerAnimated"]
+- ["CSo16UIViewController", "doneBtnPressed"]
+- ["CSo16UIViewController", "init"]
+- ["CSo16UIViewController", "tableView"]
+depends-nominal:
+- "C14SimpleReminder29AddReminderItemViewController"
+- "Ps9AnyObject"
+- "Ps11CVarArgType"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps8Hashable"
+- "PSo8NSCoding"
+- "PSo26NSExtensionRequestHandling"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo21UIAppearanceContainer"
+- "PSo18UIContentContainer"
+- "PSo18UIFocusEnvironment"
+- "CSo11UIResponder"
+- "PSo20UIScrollViewDelegate"
+- "PSo16UIStateRestoring"
+- "CSo21UITableViewController"
+- "PSo21UITableViewDataSource"
+- "PSo19UITableViewDelegate"
+- "PSo18UITraitEnvironment"
+- "CSo16UIViewController"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreData.swiftmodule"
+interface-hash: "86cfab3d0a8e3553b9f37eecb0d5bf51"

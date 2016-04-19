@@ -97,6 +97,22 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
+@class UIBarButtonItem;
+@class UITableView;
+@class NSIndexPath;
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC14SimpleReminder29AddReminderItemViewController")
+@interface AddReminderItemViewController : UITableViewController
+- (IBAction)doneBtnPressed:(UIBarButtonItem * _Nonnull)sender;
+- (IBAction)cancelBtnPressed:(UIBarButtonItem * _Nonnull)sender;
+- (NSIndexPath * _Nullable)tableView:(UITableView * _Nonnull)tableView willSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIWindow;
 @class UIApplication;
 @class NSObject;
@@ -122,14 +138,10 @@ SWIFT_CLASS("_TtC14SimpleReminder11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSCoder;
-@class UIBarButtonItem;
-@class UITableView;
-@class NSIndexPath;
 @class UITableViewCell;
 
-SWIFT_CLASS("_TtC14SimpleReminder19TableViewController")
-@interface TableViewController : UITableViewController
+SWIFT_CLASS("_TtC14SimpleReminder26ReminderListViewController")
+@interface ReminderListViewController : UITableViewController
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (IBAction)addItem:(UIBarButtonItem * _Nonnull)sender;
 - (void)viewDidLoad;
