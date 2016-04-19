@@ -91,10 +91,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crz-HX-HtP">
-                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crz-HX-HtP">
+                                                    <rect key="frame" x="8" y="8" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="doneBtnPressed:" destination="xA6-fD-hBR" eventType="editingDidEndOnExit" id="GVz-r4-dY2"/>
+                                                        <outlet property="delegate" destination="xA6-fD-hBR" id="024-gx-skS"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -113,13 +117,17 @@
                                 <action selector="cancelBtnPressed:" destination="xA6-fD-hBR" id="85z-f8-8l0"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="QkX-2Q-HiE">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="QkX-2Q-HiE">
                             <connections>
-                                <action selector="doneBtnPressed:" destination="xA6-fD-hBR" id="pUa-9n-Qjq"/>
+                                <action selector="doneBtnPressed:" destination="xA6-fD-hBR" id="4Jg-nz-Uel"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="doneBtn" destination="QkX-2Q-HiE" id="fcL-LR-JaF"/>
+                        <outlet property="textField" destination="crz-HX-HtP" id="ver-22-obh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6I-6u-dT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -93,6 +93,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -100,14 +101,20 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @class UIBarButtonItem;
 @class UITableView;
 @class NSIndexPath;
+@class UITextField;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC14SimpleReminder29AddReminderItemViewController")
-@interface AddReminderItemViewController : UITableViewController
-- (IBAction)doneBtnPressed:(UIBarButtonItem * _Nonnull)sender;
+@interface AddReminderItemViewController : UITableViewController <UITextFieldDelegate>
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified textField;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem * _Null_unspecified doneBtn;
+- (IBAction)doneBtnPressed:(id _Nonnull)sender;
 - (IBAction)cancelBtnPressed:(UIBarButtonItem * _Nonnull)sender;
+- (void)viewDidAppear:(BOOL)animated;
 - (NSIndexPath * _Nullable)tableView:(UITableView * _Nonnull)tableView willSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
