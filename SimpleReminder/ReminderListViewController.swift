@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReminderListViewController: UITableViewController {
+class ReminderListViewController: UITableViewController ,AddReminderItemViewControllerDelegate {
     
     // MARK: - Data Model
     
@@ -70,13 +70,21 @@ class ReminderListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
+//MARK: - PrepareForSegue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "AddReminder"){
+            
+            let nc = segue.destinationViewController as? UINavigationController
+        
+            let vc = nc?.topViewController as! AddReminderItemViewController
+            
+            vc.delegate = self
+        }
+    }
     
 //MARK: - TableView Delegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -127,10 +135,15 @@ class ReminderListViewController: UITableViewController {
 //MARK: - Convenience Methods
     func configureCheckmarkForCell(cell : UITableViewCell,withRemiderItem item : ReminderItem )  {
         
+        let label = cell.viewWithTag(101) as? UILabel
+        
+        label?.text = ""
+        
         if item.isChecked{
-            cell.accessoryType = .Checkmark
+            label?.text = "✓"
+            
         }else{
-            cell.accessoryType = .None
+            label?.text = ""
         }
         
     }
@@ -141,6 +154,31 @@ class ReminderListViewController: UITableViewController {
         let label = cell.viewWithTag(100) as? UILabel
         
         label?.text = item.text
+        
+    }
+    
+//MARK: - AddReminderItemViewController Delegate
+    
+    func addReminderItemViewControllerDidCancel(sender: AddReminderItemViewController) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func addReminderItemViewController(sender: AddReminderItemViewController, didFinishAddingItem item: ReminderItem) {
+        
+        let indexPath = NSIndexPath(forRow: items.count, inSection: 0)
+        
+        items.append(item)
+        
+        tableView.beginUpdates()
+        
+        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        
+        tableView.endUpdates()
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+        
         
     }
 

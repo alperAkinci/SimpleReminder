@@ -8,10 +8,10 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "UnicodeScalarType"
-- "StringLiteralType"
 - !private "!"
-- "BooleanLiteralType"
+- "StringLiteralType"
 - "ReminderItem"
+- "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "isChecked"]
 - ["Ps9AnyObject", ""]

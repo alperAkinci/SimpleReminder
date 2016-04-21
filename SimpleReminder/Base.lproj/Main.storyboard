@@ -15,27 +15,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ReminderItem" id="MD7-Xo-e3d">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ReminderItem" id="MD7-Xo-e3d">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MD7-Xo-e3d" id="GRW-L6-htw">
-                                    <rect key="frame" x="0.0" y="0.0" width="561" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="533" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-Tv-Rwd">
-                                            <rect key="frame" x="8" y="8" width="545" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-Tv-Rwd">
+                                            <rect key="frame" x="54" y="8" width="471" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-TZ-L4a">
+                                            <rect key="frame" x="8" y="-2" width="38" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="SxH-Tv-Rwd" secondAttribute="bottom" id="P8a-Ym-WG9"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="SxH-Tv-Rwd" secondAttribute="leading" id="Pnn-Lz-gDi"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="SxH-Tv-Rwd" secondAttribute="trailing" id="YhV-Sn-TcY"/>
-                                        <constraint firstAttribute="topMargin" secondItem="SxH-Tv-Rwd" secondAttribute="top" id="c9e-ir-An5"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="SxH-Tv-Rwd" secondAttribute="trailing" id="GDF-qY-eYE"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="SxH-Tv-Rwd" secondAttribute="bottom" id="OwQ-3b-Bhr"/>
+                                        <constraint firstAttribute="topMargin" secondItem="SxH-Tv-Rwd" secondAttribute="top" id="QQp-OT-d2E"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="SxH-Tv-Rwd" secondAttribute="trailing" id="T1p-BJ-Edk"/>
+                                        <constraint firstItem="sH0-TZ-L4a" firstAttribute="centerY" secondItem="SxH-Tv-Rwd" secondAttribute="centerY" id="Xzh-3v-nhy"/>
+                                        <constraint firstItem="sH0-TZ-L4a" firstAttribute="top" secondItem="GRW-L6-htw" secondAttribute="topMargin" id="dhy-It-slP"/>
+                                        <constraint firstItem="SxH-Tv-Rwd" firstAttribute="leading" secondItem="sH0-TZ-L4a" secondAttribute="trailing" constant="8" symbolic="YES" id="sZ4-sw-oOF"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="sH0-TZ-L4a" secondAttribute="leading" id="zCb-qp-ahE"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="dhy-It-slP"/>
+                                            <exclude reference="T1p-BJ-Edk"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SxH-Tv-Rwd" secondAttribute="trailing" constant="47" id="OW9-E6-fHP"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OW9-E6-fHP"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="accessoryView" destination="QMX-HN-xPT" id="GWd-bZ-OaX"/>
+                                    <segue destination="c25-eF-Tio" kind="presentation" identifier="EditReminder" trigger="accessoryAction" id="iFm-JK-FM8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -46,7 +74,7 @@
                     <navigationItem key="navigationItem" title="My Reminders" id="rg7-ET-dld">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="I3t-OC-vzC">
                             <connections>
-                                <segue destination="c25-eF-Tio" kind="presentation" id="N9I-zN-eiU"/>
+                                <segue destination="c25-eF-Tio" kind="presentation" identifier="AddReminder" id="N9I-zN-eiU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -152,4 +180,7 @@
             <point key="canvasLocation" x="1971" y="303"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iFm-JK-FM8"/>
+    </inferredMetricsTieBreakers>
 </document>
