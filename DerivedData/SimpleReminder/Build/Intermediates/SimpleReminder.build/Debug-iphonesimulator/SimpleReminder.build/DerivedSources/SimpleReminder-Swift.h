@@ -127,6 +127,7 @@ SWIFT_CLASS("_TtC14SimpleReminder11AppDelegate")
 @class UITableView;
 @class NSIndexPath;
 @class UITextField;
+@class NSManagedObject;
 @class NSBundle;
 @class NSCoder;
 
@@ -141,6 +142,7 @@ SWIFT_CLASS("_TtC14SimpleReminder28ReminderDetailViewController")
 - (NSIndexPath * _Nullable)tableView:(UITableView * _Nonnull)tableView willSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string;
 - (void)doneButtonActivationAtTheStart;
+- (NSManagedObject * _Nonnull)saveReminder:(NSString * _Nonnull)text;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -151,17 +153,23 @@ SWIFT_CLASS("_TtC14SimpleReminder28ReminderDetailViewController")
 
 SWIFT_CLASS("_TtC14SimpleReminder26ReminderListViewController")
 @interface ReminderListViewController : UITableViewController
+@property (nonatomic, copy) NSArray<NSManagedObject *> * _Nonnull reminders;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (void)addReminderItemViewControllerDidCancel:(ReminderDetailViewController * _Nonnull)sender;
+- (void)configureCheckmarkForCell:(UITableViewCell * _Nonnull)cell withRemiderItem:(NSManagedObject * _Nonnull)item;
+- (void)configureTextForCell:(UITableViewCell * _Nonnull)cell withRemiderItem:(NSManagedObject * _Nonnull)item;
 - (NSString * _Nonnull)documentsDirectory;
 - (NSString * _Nonnull)dataFilePath;
+- (void)fetchReminders;
+- (void)addReminderItemViewControllerDidCancel:(ReminderDetailViewController * _Nonnull)sender;
+- (void)addReminderItemViewController:(ReminderDetailViewController * _Nonnull)sender didFinishAddingItem:(NSManagedObject * _Nonnull)item;
 @end
 
 #pragma clang diagnostic pop

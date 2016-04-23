@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class ReminderListViewController: UITableViewController ,ReminderDetailViewControllerDelegate {
     
     // MARK: - Data Model
+    
+    var reminders = [NSManagedObject]()
     
     var items :[ReminderItem]
     
@@ -57,11 +60,17 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Documents Directory : \(documentsDirectory())")
-        print("Data Path Directory : \(dataFilePath())")
+        //print("Documents Directory : \(documentsDirectory())")
+        //print("Data Path Directory : \(dataFilePath())")
         
+        fetchReminders()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
     
 //MARK: - PrepareForSegue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -92,14 +101,14 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
     
 //MARK: - TableView Delegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return reminders.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ReminderItem", forIndexPath: indexPath)
         
-        let item = items[indexPath.row]
+        let item = reminders[indexPath.row]
         configureTextForCell(cell, withRemiderItem: item)
         configureCheckmarkForCell(cell, withRemiderItem: item)
        
@@ -121,7 +130,8 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
         let item = items[indexPath.row]
         
         item.checkmarkToggled()
-        configureCheckmarkForCell(cell, withRemiderItem: item)
+        
+        //configureCheckmarkForCell(cell, withRemiderItem: item)
         
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -146,13 +156,17 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
     
     
 //MARK: - Convenience Methods
-    func configureCheckmarkForCell(cell : UITableViewCell,withRemiderItem item : ReminderItem )  {
+    func configureCheckmarkForCell(cell : UITableViewCell,withRemiderItem item : NSManagedObject )  {
         
         let label = cell.viewWithTag(101) as? UILabel
         
         label?.text = ""
         
-        if item.isChecked{
+        guard let isChecked = item.valueForKey("isChecked") as? BooleanType else {print ("isChecked value is nil")
+                  return
+            }
+    
+        if isChecked{
             label?.text = "✓"
             
         }else{
@@ -162,13 +176,49 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
     }
     
    
-    func configureTextForCell(cell : UITableViewCell ,withRemiderItem item : ReminderItem ){
+    func configureTextForCell(cell : UITableViewCell ,withRemiderItem item : NSManagedObject ){
     
         let label = cell.viewWithTag(100) as? UILabel
         
-        label?.text = item.text
+        label?.text = item.valueForKey("text") as? String
         
     }
+    
+    
+    
+    func documentsDirectory() -> String{
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        
+        return paths[0]
+    }
+    
+    func dataFilePath() -> String {
+        
+        return (documentsDirectory() as NSString).stringByAppendingPathComponent("Reminders.plist")
+        
+    }
+    
+    
+    
+    func fetchReminders () {
+        //1 - before we do anything in CoreData , we need a managed object context . Pull up AppDelegate and grab a referance to its managed object context.
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        let managedContext = appDelegate?.managedObjectContext
+        
+        //2 - Make Fetching request via NSFetchRequest
+        let fetchRequest = NSFetchRequest(entityName: "ReminderItem")
+        
+        //3 - Return an array of managed context that specified by fetch request
+        do {
+            let results = try managedContext?.executeFetchRequest(fetchRequest)
+            reminders = results as! [NSManagedObject]
+        }catch let error as NSError{
+            print("Could not fetch \(error),\(error.userInfo)")
+        }
+        
+    }
+    
+
     
 //MARK: - ReminderDetailViewController Delegate
     
@@ -177,12 +227,16 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func addReminderItemViewController(sender: ReminderDetailViewController, didFinishAddingItem item: ReminderItem) {
+    func addReminderItemViewController(sender: ReminderDetailViewController, didFinishAddingItem item: NSManagedObject) {
         
-        let indexPath = NSIndexPath(forRow: items.count, inSection: 0)
+        let indexPath = NSIndexPath(forRow: reminders.count, inSection: 0)
         
-        items.append(item)
+        reminders.append(item)//to show person when tableView reloads
+        
         tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Bottom)
+        
+        
+        
         
     }
     
@@ -199,17 +253,11 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
     }
     
     
-    func documentsDirectory() -> String{
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        
-        return paths[0]
-    }
     
-    func dataFilePath() -> String {
-     
-        return (documentsDirectory() as NSString).stringByAppendingPathComponent("Reminders.plist")
     
-    }
+   
+    
+
 
 
 

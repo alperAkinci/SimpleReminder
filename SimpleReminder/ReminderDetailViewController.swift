@@ -8,10 +8,11 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol ReminderDetailViewControllerDelegate : class {
     
-    func addReminderItemViewController(sender : ReminderDetailViewController , didFinishAddingItem item : ReminderItem)
+    func addReminderItemViewController(sender : ReminderDetailViewController , didFinishAddingItem item : NSManagedObject)
     
     func addReminderItemViewController(sender : ReminderDetailViewController , didFinishEditingItem item : ReminderItem)
     
@@ -47,10 +48,10 @@ class ReminderDetailViewController: UITableViewController , UITextFieldDelegate 
         
         }else{
         
-            let newReminder = ReminderItem()
+            let newReminder = saveReminder(textField.text!)
             
-            newReminder.text = textField.text!
-            newReminder.isChecked = false
+            //newReminder.text = textField.text!
+            //newReminder.isChecked = false
             
             delegate?.addReminderItemViewController(self, didFinishAddingItem: newReminder)
             
@@ -110,6 +111,37 @@ class ReminderDetailViewController: UITableViewController , UITextFieldDelegate 
         doneBtn.enabled = !((textField.text?.isEmpty)!)
 
     
+    }
+    
+    //MARK: - saveReminder Function
+    
+    func saveReminder (text : String) -> NSManagedObject{
+        
+        //1 - Access ManagedObjectContext which lives in AppDelegate, to access it you must get reference of AppDelegate first
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2 - Create a new managedObject and insert it into a managed object context .
+        let entity  = NSEntityDescription.entityForName("ReminderItem", inManagedObjectContext: managedContext)
+        
+        let reminder = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        //3 - With an NSManagedObject , set the name attribute using key-value coding
+        reminder.setValue(text, forKey: "text")
+        reminder.setValue(false, forKey: "isChecked")
+        
+        //4 - Commit the changes to person and save to disk by calling save on the managed object context
+        
+        do {
+            try managedContext.save()
+        }catch let error as NSError{
+            print("Could not save \(error),\(error.userInfo)")
+        }
+        
+        return reminder
+        
+        
     }
     
  
