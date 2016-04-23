@@ -22,26 +22,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="533" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-Tv-Rwd">
-                                            <rect key="frame" x="54" y="8" width="471" height="27"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-TZ-L4a">
                                             <rect key="frame" x="8" y="-2" width="38" height="48"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-Tv-Rwd">
+                                            <rect key="frame" x="54" y="8" width="471" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="SxH-Tv-Rwd" secondAttribute="trailing" id="GDF-qY-eYE"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="SxH-Tv-Rwd" secondAttribute="bottom" id="OwQ-3b-Bhr"/>
                                         <constraint firstAttribute="topMargin" secondItem="SxH-Tv-Rwd" secondAttribute="top" id="QQp-OT-d2E"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="SxH-Tv-Rwd" secondAttribute="trailing" id="T1p-BJ-Edk"/>
                                         <constraint firstItem="sH0-TZ-L4a" firstAttribute="centerY" secondItem="SxH-Tv-Rwd" secondAttribute="centerY" id="Xzh-3v-nhy"/>
                                         <constraint firstItem="sH0-TZ-L4a" firstAttribute="top" secondItem="GRW-L6-htw" secondAttribute="topMargin" id="dhy-It-slP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="SxH-Tv-Rwd" secondAttribute="trailing" id="k8L-xX-Byj"/>
                                         <constraint firstItem="SxH-Tv-Rwd" firstAttribute="leading" secondItem="sH0-TZ-L4a" secondAttribute="trailing" constant="8" symbolic="YES" id="sZ4-sw-oOF"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="sH0-TZ-L4a" secondAttribute="leading" id="zCb-qp-ahE"/>
                                     </constraints>
@@ -61,8 +61,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="accessoryView" destination="QMX-HN-xPT" id="GWd-bZ-OaX"/>
-                                    <segue destination="c25-eF-Tio" kind="presentation" identifier="EditReminder" trigger="accessoryAction" id="iFm-JK-FM8"/>
+                                    <segue destination="c25-eF-Tio" kind="presentation" identifier="EditReminder" trigger="accessoryAction" id="yMT-N2-yxk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -104,7 +103,7 @@
         <!--Add Reminder-->
         <scene sceneID="RdT-HB-h6P">
             <objects>
-                <tableViewController id="xA6-fD-hBR" customClass="AddReminderItemViewController" customModule="SimpleReminder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xA6-fD-hBR" customClass="ReminderDetailViewController" customModule="SimpleReminder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="wnl-9N-rl8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +144,7 @@
                                 <action selector="cancelBtnPressed:" destination="xA6-fD-hBR" id="85z-f8-8l0"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="QkX-2Q-HiE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="QkX-2Q-HiE">
                             <connections>
                                 <action selector="doneBtnPressed:" destination="xA6-fD-hBR" id="4Jg-nz-Uel"/>
                             </connections>
@@ -181,6 +180,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iFm-JK-FM8"/>
+        <segue reference="yMT-N2-yxk"/>
     </inferredMetricsTieBreakers>
 </document>

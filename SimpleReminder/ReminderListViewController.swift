@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReminderListViewController: UITableViewController ,AddReminderItemViewControllerDelegate {
+class ReminderListViewController: UITableViewController ,ReminderDetailViewControllerDelegate {
     
     // MARK: - Data Model
     
@@ -50,29 +50,18 @@ class ReminderListViewController: UITableViewController ,AddReminderItemViewCont
         super.init(coder: aDecoder)
     }
     
-    @IBAction func addItem(sender: UIBarButtonItem) {
-        
-        let indexPath = NSIndexPath(forRow: items.count, inSection: 0)
-        
-        let row5Item : ReminderItem? = ReminderItem()
-        row5Item?.text = "Holaaaa"
-        row5Item?.isChecked = false
-        items.append(row5Item!)
-        
-        //tableView.beginUpdates()
-        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        //tableView.endUpdates()
-    }
-    
-    
+
+
     
 // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
+        
+        print("Documents Directory : \(documentsDirectory())")
+        print("Data Path Directory : \(dataFilePath())")
         
     }
+    
     
 //MARK: - PrepareForSegue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -80,9 +69,24 @@ class ReminderListViewController: UITableViewController ,AddReminderItemViewCont
             
             let nc = segue.destinationViewController as? UINavigationController
         
-            let vc = nc?.topViewController as! AddReminderItemViewController
+            let vc = nc?.topViewController as! ReminderDetailViewController
             
             vc.delegate = self
+        }
+        
+        else if (segue.identifier == "EditReminder"){
+            
+            let nc = segue.destinationViewController as? UINavigationController
+            
+            let vc = nc?.topViewController as! ReminderDetailViewController
+            
+            vc.delegate = self
+            
+            guard let cell = tableView.indexPathForCell(sender as! UITableViewCell)else {return}
+            
+            vc.reminderToEdit = items[(cell.row)]
+            
+            
         }
     }
     
@@ -119,9 +123,18 @@ class ReminderListViewController: UITableViewController ,AddReminderItemViewCont
         item.checkmarkToggled()
         configureCheckmarkForCell(cell, withRemiderItem: item)
         
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
+    
+    //Why we use that method?
+    //Selected row should get in selected status after accessory button pressed ,to use tableView.indexPathForSelectedRow
+    //Reminder : the row selected by user gets in "deselected status" after pressed via tableView(:diddidSelectRowAtIndexPath) method
+    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
+    }
+    
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 
@@ -157,29 +170,45 @@ class ReminderListViewController: UITableViewController ,AddReminderItemViewCont
         
     }
     
-//MARK: - AddReminderItemViewController Delegate
+//MARK: - ReminderDetailViewController Delegate
     
-    func addReminderItemViewControllerDidCancel(sender: AddReminderItemViewController) {
+    func addReminderItemViewControllerDidCancel(sender: ReminderDetailViewController) {
         
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func addReminderItemViewController(sender: AddReminderItemViewController, didFinishAddingItem item: ReminderItem) {
+    func addReminderItemViewController(sender: ReminderDetailViewController, didFinishAddingItem item: ReminderItem) {
         
         let indexPath = NSIndexPath(forRow: items.count, inSection: 0)
         
         items.append(item)
+        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Bottom)
         
-        tableView.beginUpdates()
+    }
+    
+    func addReminderItemViewController(sender : ReminderDetailViewController , didFinishEditingItem item : ReminderItem){
         
-        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else{print("Could not find index path!")
+             return}
         
-        tableView.endUpdates()
+        // Update an existing reminder items.
+        items[selectedIndexPath.row] = item
+        tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .Automatic)
+           
         
-        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    func documentsDirectory() -> String{
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         
-        
-        
+        return paths[0]
+    }
+    
+    func dataFilePath() -> String {
+     
+        return (documentsDirectory() as NSString).stringByAppendingPathComponent("Reminders.plist")
+    
     }
 
 

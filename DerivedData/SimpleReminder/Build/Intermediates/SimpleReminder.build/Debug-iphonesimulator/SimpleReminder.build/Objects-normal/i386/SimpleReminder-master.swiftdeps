@@ -1,8 +1,8 @@
 version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
 options: "938ab878efe8c55ba04c8ca111752bcd"
-build_time: [514573171, 386468000]
+build_time: [514726436, 435818000]
 inputs:
-  "/Users/alper/Documents/Developer/iOS - Swift/Projects/SimpleReminder/SimpleReminder/ReminderListViewController.swift": [514568861, 0]
+  "/Users/alper/Documents/Developer/iOS - Swift/Projects/SimpleReminder/SimpleReminder/ReminderListViewController.swift": [514726434, 0]
   "/Users/alper/Documents/Developer/iOS - Swift/Projects/SimpleReminder/SimpleReminder/AppDelegate.swift": [514120389, 0]
   "/Users/alper/Documents/Developer/iOS - Swift/Projects/SimpleReminder/SimpleReminder/ReminderItem.swift": [514227182, 0]
-  "/Users/alper/Documents/Developer/iOS - Swift/Projects/SimpleReminder/SimpleReminder/AddReminderItemViewController.swift": [514469212, 0]
+  "/Users/alper/Documents/Developer/iOS - Swift/Projects/SimpleReminder/SimpleReminder/ReminderDetailViewController.swift": [514632860, 0]

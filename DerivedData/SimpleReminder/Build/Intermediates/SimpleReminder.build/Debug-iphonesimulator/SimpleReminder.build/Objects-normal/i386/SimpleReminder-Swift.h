@@ -98,27 +98,6 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
-@class UIBarButtonItem;
-@class UITableView;
-@class NSIndexPath;
-@class UITextField;
-@class NSBundle;
-@class NSCoder;
-
-SWIFT_CLASS("_TtC14SimpleReminder29AddReminderItemViewController")
-@interface AddReminderItemViewController : UITableViewController <UITextFieldDelegate>
-@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified textField;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem * _Null_unspecified doneBtn;
-- (IBAction)doneBtnPressed:(id _Nonnull)sender;
-- (IBAction)cancelBtnPressed:(UIBarButtonItem * _Nonnull)sender;
-- (void)viewDidAppear:(BOOL)animated;
-- (NSIndexPath * _Nullable)tableView:(UITableView * _Nonnull)tableView willSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string;
-- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class UIWindow;
 @class UIApplication;
 @class NSObject;
@@ -144,20 +123,45 @@ SWIFT_CLASS("_TtC14SimpleReminder11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIBarButtonItem;
+@class UITableView;
+@class NSIndexPath;
+@class UITextField;
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC14SimpleReminder28ReminderDetailViewController")
+@interface ReminderDetailViewController : UITableViewController <UITextFieldDelegate>
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified textField;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem * _Null_unspecified doneBtn;
+- (IBAction)doneBtnPressed:(id _Nonnull)sender;
+- (IBAction)cancelBtnPressed:(UIBarButtonItem * _Nonnull)sender;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (NSIndexPath * _Nullable)tableView:(UITableView * _Nonnull)tableView willSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string;
+- (void)doneButtonActivationAtTheStart;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIStoryboardSegue;
 @class UITableViewCell;
 
 SWIFT_CLASS("_TtC14SimpleReminder26ReminderListViewController")
 @interface ReminderListViewController : UITableViewController
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (IBAction)addItem:(UIBarButtonItem * _Nonnull)sender;
 - (void)viewDidLoad;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (void)addReminderItemViewControllerDidCancel:(AddReminderItemViewController * _Nonnull)sender;
+- (void)addReminderItemViewControllerDidCancel:(ReminderDetailViewController * _Nonnull)sender;
+- (NSString * _Nonnull)documentsDirectory;
+- (NSString * _Nonnull)dataFilePath;
 @end
 
 #pragma clang diagnostic pop

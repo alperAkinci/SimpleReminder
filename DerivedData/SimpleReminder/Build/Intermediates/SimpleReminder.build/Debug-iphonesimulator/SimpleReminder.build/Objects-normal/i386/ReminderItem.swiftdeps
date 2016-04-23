@@ -7,11 +7,11 @@ provides-member:
 - ["C14SimpleReminder12ReminderItem", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "UnicodeScalarType"
-- !private "!"
 - "StringLiteralType"
 - "ReminderItem"
+- "UnicodeScalarType"
 - "BooleanLiteralType"
+- !private "!"
 depends-member:
 - !private ["Ps9AnyObject", "isChecked"]
 - ["Ps9AnyObject", ""]
