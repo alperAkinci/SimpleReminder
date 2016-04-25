@@ -13,6 +13,8 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
     
     // MARK: - Data Model
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
     var reminders = [NSManagedObject]()
     
     var items :[ReminderItem]
@@ -72,6 +74,7 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
         
     }
     
+    
 //MARK: - PrepareForSegue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "AddReminder"){
@@ -93,7 +96,7 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
             
             guard let cell = tableView.indexPathForCell(sender as! UITableViewCell)else {return}
             
-            vc.reminderToEdit = items[(cell.row)]
+            vc.reminderToEdit = reminders[(cell.row)]
             
             
         }
@@ -127,12 +130,15 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
         guard let cell = selectedCell else {print("Cell is nil")
             return}
         
-        let item = items[indexPath.row]
+        let item = reminders[indexPath.row]
         
-        item.checkmarkToggled()
+        let itemIsChecked = item.valueForKey("isChecked") as! Bool
         
-        //configureCheckmarkForCell(cell, withRemiderItem: item)
+        item.setValue(!itemIsChecked, forKey: "isChecked")
         
+        configureCheckmarkForCell(cell, withRemiderItem: item)
+        
+        appDelegate.saveContext()
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
@@ -149,9 +155,13 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            items.removeAtIndex(indexPath.row)
+            reminders.removeAtIndex(indexPath.row)
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            
         }
+        
+        appDelegate.saveContext()
     }
     
     
@@ -162,7 +172,7 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
         
         label?.text = ""
         
-        guard let isChecked = item.valueForKey("isChecked") as? BooleanType else {print ("isChecked value is nil")
+        guard let isChecked = item.valueForKey("isChecked") as? Bool else {print ("isChecked value is nil")
                   return
             }
     
@@ -240,13 +250,15 @@ class ReminderListViewController: UITableViewController ,ReminderDetailViewContr
         
     }
     
-    func addReminderItemViewController(sender : ReminderDetailViewController , didFinishEditingItem item : ReminderItem){
+    func addReminderItemViewController(sender : ReminderDetailViewController , didFinishEditingItem item : NSManagedObject){
         
         guard let selectedIndexPath = tableView.indexPathForSelectedRow else{print("Could not find index path!")
              return}
         
         // Update an existing reminder items.
-        items[selectedIndexPath.row] = item
+        reminders[selectedIndexPath.row] = item
+        
+        appDelegate.saveContext()
         tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .Automatic)
            
         

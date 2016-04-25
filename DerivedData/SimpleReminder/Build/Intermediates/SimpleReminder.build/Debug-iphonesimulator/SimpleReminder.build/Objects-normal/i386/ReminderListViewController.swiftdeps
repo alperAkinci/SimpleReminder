@@ -6,69 +6,71 @@ provides-nominal:
 provides-member:
 - ["C14SimpleReminder26ReminderListViewController", ""]
 provides-dynamic-lookup:
-- "viewDidLoad"
-- "documentsDirectory"
-- "viewDidAppear"
-- "reminders"
+- "appDelegate"
 - "configureCheckmarkForCell"
-- "prepareForSegue"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "viewDidLoad"
 - "addReminderItemViewController"
+- "addReminderItemViewController"
+- "documentsDirectory"
+- "prepareForSegue"
 - "addReminderItemViewControllerDidCancel"
 - "fetchReminders"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
+- "reminders"
+- "viewDidAppear"
 - "dataFilePath"
 - "configureTextForCell"
 depends-top-level:
 - "UIStoryboardSegue"
+- "Bool"
+- "NSManagedObject"
+- !private "Array"
 - "ReminderDetailViewControllerDelegate"
+- !private "UINavigationController"
+- !private "UILabel"
+- "UITableViewController"
 - !private "NSFetchRequest"
 - !private "print"
-- !private "UIApplication"
-- "UITableViewController"
-- "Bool"
-- "UITableViewCell"
-- !private "Array"
-- "UITableViewCellEditingStyle"
-- !private "AppDelegate"
-- "AnyObject"
-- !private "=="
-- "NSManagedObject"
-- "Int"
-- "NSIndexPath"
-- "NSCoder"
-- "UITableView"
-- "ReminderListViewController"
-- !private "UINavigationController"
-- !private "UITableViewRowAnimation"
-- "String"
-- !private "NSSearchPathForDirectoriesInDomains"
-- !private "BooleanType"
+- "UIApplication"
+- !private "!"
+- !private "NSString"
 - !private "NSError"
 - "ReminderDetailViewController"
-- !private "NSString"
-- !private "UILabel"
+- !private "NSSearchPathForDirectoriesInDomains"
+- "AppDelegate"
+- "UITableView"
+- "AnyObject"
+- "ReminderListViewController"
 - "ReminderItem"
+- "Int"
+- "UITableViewCellEditingStyle"
+- !private "UITableViewRowAnimation"
+- "NSIndexPath"
+- !private "=="
+- "NSCoder"
+- "String"
+- "UITableViewCell"
 depends-member:
 - !private ["Ps9AnyObject", "NSFetchRequest"]
 - !private ["Ps9AnyObject", "NSIndexPath"]
 - ["Ps9AnyObject", "NSManagedObject"]
 - !private ["Ps9AnyObject", "NSSearchPathForDirectoriesInDomains"]
 - !private ["Ps9AnyObject", "ReminderItem"]
-- !private ["Ps9AnyObject", "UIApplication"]
+- ["Ps9AnyObject", "UIApplication"]
 - !private ["Ps9AnyObject", "UITableViewCellEditingStyle"]
 - !private ["Ps9AnyObject", "UITableViewRowAnimation"]
 - ["Ps9AnyObject", "addReminderItemViewController"]
 - ["Ps9AnyObject", "addReminderItemViewControllerDidCancel"]
+- ["Ps9AnyObject", "appDelegate"]
 - !private ["Ps9AnyObject", "cellForRowAtIndexPath"]
-- !private ["Ps9AnyObject", "checkmarkToggled"]
 - ["Ps9AnyObject", "configureCheckmarkForCell"]
 - ["Ps9AnyObject", "configureTextForCell"]
 - ["Ps9AnyObject", "dataFilePath"]
-- !private ["Ps9AnyObject", "delegate"]
+- ["Ps9AnyObject", "delegate"]
 - !private ["Ps9AnyObject", "deleteRowsAtIndexPaths"]
 - !private ["Ps9AnyObject", "dequeueReusableCellWithIdentifier"]
 - !private ["Ps9AnyObject", "deselectRowAtIndexPath"]
@@ -91,8 +93,10 @@ depends-member:
 - !private ["Ps9AnyObject", "reminderToEdit"]
 - ["Ps9AnyObject", "reminders"]
 - !private ["Ps9AnyObject", "row"]
+- !private ["Ps9AnyObject", "saveContext"]
 - !private ["Ps9AnyObject", "selectRowAtIndexPath"]
-- !private ["Ps9AnyObject", "sharedApplication"]
+- !private ["Ps9AnyObject", "setValue"]
+- ["Ps9AnyObject", "sharedApplication"]
 - !private ["Ps9AnyObject", "stringByAppendingPathComponent"]
 - ["Ps9AnyObject", "tableView"]
 - !private ["Ps9AnyObject", "text"]
@@ -104,6 +108,7 @@ depends-member:
 - !private ["Ps9AnyObject", "viewWithTag"]
 - ["Ps9AnyObject", ""]
 - !private ["C14SimpleReminder11AppDelegate", "managedObjectContext"]
+- !private ["C14SimpleReminder11AppDelegate", "saveContext"]
 - !private ["Sa", "Element"]
 - ["Sa", "Generator"]
 - ["Sa", "Index"]
@@ -136,7 +141,6 @@ depends-member:
 - !private ["Sb", "deinit"]
 - !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
-- !private ["Ps11BooleanType", "boolValue"]
 - ["Ps11CVarArgType", "Distance"]
 - ["Ps11CVarArgType", "IntegerLiteralType"]
 - !private ["Ps11CVarArgType", "NSFetchRequest"]
@@ -144,16 +148,17 @@ depends-member:
 - ["Ps11CVarArgType", "NSManagedObject"]
 - !private ["Ps11CVarArgType", "NSSearchPathForDirectoriesInDomains"]
 - !private ["Ps11CVarArgType", "ReminderItem"]
-- !private ["Ps11CVarArgType", "UIApplication"]
+- ["Ps11CVarArgType", "UIApplication"]
 - !private ["Ps11CVarArgType", "UITableViewCellEditingStyle"]
 - !private ["Ps11CVarArgType", "UITableViewRowAnimation"]
 - ["Ps11CVarArgType", "addReminderItemViewController"]
 - ["Ps11CVarArgType", "addReminderItemViewControllerDidCancel"]
+- ["Ps11CVarArgType", "appDelegate"]
 - !private ["Ps11CVarArgType", "cellForRowAtIndexPath"]
 - ["Ps11CVarArgType", "configureCheckmarkForCell"]
 - ["Ps11CVarArgType", "configureTextForCell"]
 - ["Ps11CVarArgType", "dataFilePath"]
-- !private ["Ps11CVarArgType", "delegate"]
+- ["Ps11CVarArgType", "delegate"]
 - !private ["Ps11CVarArgType", "deleteRowsAtIndexPaths"]
 - !private ["Ps11CVarArgType", "dequeueReusableCellWithIdentifier"]
 - !private ["Ps11CVarArgType", "deselectRowAtIndexPath"]
@@ -175,8 +180,10 @@ depends-member:
 - !private ["Ps11CVarArgType", "reminderToEdit"]
 - ["Ps11CVarArgType", "reminders"]
 - !private ["Ps11CVarArgType", "row"]
+- !private ["Ps11CVarArgType", "saveContext"]
 - !private ["Ps11CVarArgType", "selectRowAtIndexPath"]
-- !private ["Ps11CVarArgType", "sharedApplication"]
+- !private ["Ps11CVarArgType", "setValue"]
+- ["Ps11CVarArgType", "sharedApplication"]
 - !private ["Ps11CVarArgType", "stringByAppendingPathComponent"]
 - ["Ps11CVarArgType", "tableView"]
 - !private ["Ps11CVarArgType", "text"]
@@ -211,19 +218,20 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "ReminderItem"]
 - ["Ps28CustomDebugStringConvertible", "Some"]
 - ["Ps28CustomDebugStringConvertible", "SubSequence"]
-- !private ["Ps28CustomDebugStringConvertible", "UIApplication"]
+- ["Ps28CustomDebugStringConvertible", "UIApplication"]
 - !private ["Ps28CustomDebugStringConvertible", "UITableViewCellEditingStyle"]
 - !private ["Ps28CustomDebugStringConvertible", "UITableViewRowAnimation"]
 - ["Ps28CustomDebugStringConvertible", "_Element"]
 - ["Ps28CustomDebugStringConvertible", "addReminderItemViewController"]
 - ["Ps28CustomDebugStringConvertible", "addReminderItemViewControllerDidCancel"]
+- ["Ps28CustomDebugStringConvertible", "appDelegate"]
 - !private ["Ps28CustomDebugStringConvertible", "append"]
 - !private ["Ps28CustomDebugStringConvertible", "cellForRowAtIndexPath"]
 - ["Ps28CustomDebugStringConvertible", "configureCheckmarkForCell"]
 - ["Ps28CustomDebugStringConvertible", "configureTextForCell"]
 - !private ["Ps28CustomDebugStringConvertible", "count"]
 - ["Ps28CustomDebugStringConvertible", "dataFilePath"]
-- !private ["Ps28CustomDebugStringConvertible", "delegate"]
+- ["Ps28CustomDebugStringConvertible", "delegate"]
 - !private ["Ps28CustomDebugStringConvertible", "deleteRowsAtIndexPaths"]
 - !private ["Ps28CustomDebugStringConvertible", "dequeueReusableCellWithIdentifier"]
 - !private ["Ps28CustomDebugStringConvertible", "deselectRowAtIndexPath"]
@@ -246,8 +254,10 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "reminders"]
 - !private ["Ps28CustomDebugStringConvertible", "removeAtIndex"]
 - !private ["Ps28CustomDebugStringConvertible", "row"]
+- !private ["Ps28CustomDebugStringConvertible", "saveContext"]
 - !private ["Ps28CustomDebugStringConvertible", "selectRowAtIndexPath"]
-- !private ["Ps28CustomDebugStringConvertible", "sharedApplication"]
+- !private ["Ps28CustomDebugStringConvertible", "setValue"]
+- ["Ps28CustomDebugStringConvertible", "sharedApplication"]
 - !private ["Ps28CustomDebugStringConvertible", "stringByAppendingPathComponent"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - ["Ps28CustomDebugStringConvertible", "tableView"]
@@ -270,20 +280,21 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "NSSearchPathForDirectoriesInDomains"]
 - !private ["Ps23CustomStringConvertible", "ReminderItem"]
 - ["Ps23CustomStringConvertible", "SubSequence"]
-- !private ["Ps23CustomStringConvertible", "UIApplication"]
+- ["Ps23CustomStringConvertible", "UIApplication"]
 - !private ["Ps23CustomStringConvertible", "UITableViewCellEditingStyle"]
 - !private ["Ps23CustomStringConvertible", "UITableViewRowAnimation"]
 - ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - ["Ps23CustomStringConvertible", "addReminderItemViewController"]
 - ["Ps23CustomStringConvertible", "addReminderItemViewControllerDidCancel"]
+- ["Ps23CustomStringConvertible", "appDelegate"]
 - !private ["Ps23CustomStringConvertible", "append"]
 - !private ["Ps23CustomStringConvertible", "cellForRowAtIndexPath"]
 - ["Ps23CustomStringConvertible", "configureCheckmarkForCell"]
 - ["Ps23CustomStringConvertible", "configureTextForCell"]
 - !private ["Ps23CustomStringConvertible", "count"]
 - ["Ps23CustomStringConvertible", "dataFilePath"]
-- !private ["Ps23CustomStringConvertible", "delegate"]
+- ["Ps23CustomStringConvertible", "delegate"]
 - !private ["Ps23CustomStringConvertible", "deleteRowsAtIndexPaths"]
 - !private ["Ps23CustomStringConvertible", "dequeueReusableCellWithIdentifier"]
 - !private ["Ps23CustomStringConvertible", "deselectRowAtIndexPath"]
@@ -306,8 +317,10 @@ depends-member:
 - ["Ps23CustomStringConvertible", "reminders"]
 - !private ["Ps23CustomStringConvertible", "removeAtIndex"]
 - !private ["Ps23CustomStringConvertible", "row"]
+- !private ["Ps23CustomStringConvertible", "saveContext"]
 - !private ["Ps23CustomStringConvertible", "selectRowAtIndexPath"]
-- !private ["Ps23CustomStringConvertible", "sharedApplication"]
+- !private ["Ps23CustomStringConvertible", "setValue"]
+- ["Ps23CustomStringConvertible", "sharedApplication"]
 - !private ["Ps23CustomStringConvertible", "stringByAppendingPathComponent"]
 - !private ["Ps23CustomStringConvertible", "subscript"]
 - ["Ps23CustomStringConvertible", "tableView"]
@@ -333,18 +346,19 @@ depends-member:
 - !private ["Ps9Equatable", "None"]
 - !private ["Ps9Equatable", "RawValue"]
 - !private ["Ps9Equatable", "ReminderItem"]
-- !private ["Ps9Equatable", "UIApplication"]
+- ["Ps9Equatable", "UIApplication"]
 - !private ["Ps9Equatable", "UITableViewCellEditingStyle"]
 - !private ["Ps9Equatable", "UITableViewRowAnimation"]
 - !private ["Ps9Equatable", "UserDomainMask"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - ["Ps9Equatable", "addReminderItemViewController"]
 - ["Ps9Equatable", "addReminderItemViewControllerDidCancel"]
+- ["Ps9Equatable", "appDelegate"]
 - !private ["Ps9Equatable", "cellForRowAtIndexPath"]
 - ["Ps9Equatable", "configureCheckmarkForCell"]
 - ["Ps9Equatable", "configureTextForCell"]
 - ["Ps9Equatable", "dataFilePath"]
-- !private ["Ps9Equatable", "delegate"]
+- ["Ps9Equatable", "delegate"]
 - !private ["Ps9Equatable", "deleteRowsAtIndexPaths"]
 - !private ["Ps9Equatable", "dequeueReusableCellWithIdentifier"]
 - !private ["Ps9Equatable", "deselectRowAtIndexPath"]
@@ -366,8 +380,10 @@ depends-member:
 - !private ["Ps9Equatable", "reminderToEdit"]
 - ["Ps9Equatable", "reminders"]
 - !private ["Ps9Equatable", "row"]
+- !private ["Ps9Equatable", "saveContext"]
 - !private ["Ps9Equatable", "selectRowAtIndexPath"]
-- !private ["Ps9Equatable", "sharedApplication"]
+- !private ["Ps9Equatable", "setValue"]
+- ["Ps9Equatable", "sharedApplication"]
 - !private ["Ps9Equatable", "stringByAppendingPathComponent"]
 - ["Ps9Equatable", "tableView"]
 - !private ["Ps9Equatable", "text"]
@@ -398,17 +414,18 @@ depends-member:
 - !private ["Ps8Hashable", "None"]
 - !private ["Ps8Hashable", "RawValue"]
 - !private ["Ps8Hashable", "ReminderItem"]
-- !private ["Ps8Hashable", "UIApplication"]
+- ["Ps8Hashable", "UIApplication"]
 - !private ["Ps8Hashable", "UITableViewCellEditingStyle"]
 - !private ["Ps8Hashable", "UITableViewRowAnimation"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - ["Ps8Hashable", "addReminderItemViewController"]
 - ["Ps8Hashable", "addReminderItemViewControllerDidCancel"]
+- ["Ps8Hashable", "appDelegate"]
 - !private ["Ps8Hashable", "cellForRowAtIndexPath"]
 - ["Ps8Hashable", "configureCheckmarkForCell"]
 - ["Ps8Hashable", "configureTextForCell"]
 - ["Ps8Hashable", "dataFilePath"]
-- !private ["Ps8Hashable", "delegate"]
+- ["Ps8Hashable", "delegate"]
 - !private ["Ps8Hashable", "deleteRowsAtIndexPaths"]
 - !private ["Ps8Hashable", "dequeueReusableCellWithIdentifier"]
 - !private ["Ps8Hashable", "deselectRowAtIndexPath"]
@@ -430,8 +447,10 @@ depends-member:
 - !private ["Ps8Hashable", "reminderToEdit"]
 - ["Ps8Hashable", "reminders"]
 - !private ["Ps8Hashable", "row"]
+- !private ["Ps8Hashable", "saveContext"]
 - !private ["Ps8Hashable", "selectRowAtIndexPath"]
-- !private ["Ps8Hashable", "sharedApplication"]
+- !private ["Ps8Hashable", "setValue"]
+- ["Ps8Hashable", "sharedApplication"]
 - !private ["Ps8Hashable", "stringByAppendingPathComponent"]
 - ["Ps8Hashable", "tableView"]
 - !private ["Ps8Hashable", "text"]
@@ -504,11 +523,12 @@ depends-member:
 - ["PSo8NSCoding", "NSManagedObject"]
 - !private ["PSo8NSCoding", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo8NSCoding", "ReminderItem"]
-- !private ["PSo8NSCoding", "UIApplication"]
+- ["PSo8NSCoding", "UIApplication"]
 - !private ["PSo8NSCoding", "UITableViewCellEditingStyle"]
 - !private ["PSo8NSCoding", "UITableViewRowAnimation"]
 - ["PSo8NSCoding", "addReminderItemViewController"]
 - ["PSo8NSCoding", "addReminderItemViewControllerDidCancel"]
+- ["PSo8NSCoding", "appDelegate"]
 - !private ["PSo8NSCoding", "cellForRowAtIndexPath"]
 - ["PSo8NSCoding", "configureCheckmarkForCell"]
 - ["PSo8NSCoding", "configureTextForCell"]
@@ -552,11 +572,12 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "NSManagedObject"]
 - !private ["PSo26NSExtensionRequestHandling", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo26NSExtensionRequestHandling", "ReminderItem"]
-- !private ["PSo26NSExtensionRequestHandling", "UIApplication"]
+- ["PSo26NSExtensionRequestHandling", "UIApplication"]
 - !private ["PSo26NSExtensionRequestHandling", "UITableViewCellEditingStyle"]
 - !private ["PSo26NSExtensionRequestHandling", "UITableViewRowAnimation"]
 - ["PSo26NSExtensionRequestHandling", "addReminderItemViewController"]
 - ["PSo26NSExtensionRequestHandling", "addReminderItemViewControllerDidCancel"]
+- ["PSo26NSExtensionRequestHandling", "appDelegate"]
 - ["PSo26NSExtensionRequestHandling", "configureCheckmarkForCell"]
 - ["PSo26NSExtensionRequestHandling", "configureTextForCell"]
 - ["PSo26NSExtensionRequestHandling", "dataFilePath"]
@@ -579,14 +600,14 @@ depends-member:
 - !private ["CSo11NSIndexPath", "init"]
 - !private ["CSo11NSIndexPath", "row"]
 - !private ["PSo9NSLocking", "executeFetchRequest"]
+- !private ["CSo15NSManagedObject", "setValue"]
 - !private ["CSo15NSManagedObject", "valueForKey"]
 - !private ["CSo22NSManagedObjectContext", "executeFetchRequest"]
 - !private ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "stringByAppendingPathComponent"]
 - ["CSo8NSObject", "AnyObject"]
-- !private ["CSo8NSObject", "AppDelegate"]
+- ["CSo8NSObject", "AppDelegate"]
 - ["CSo8NSObject", "Bool"]
-- !private ["CSo8NSObject", "BooleanType"]
 - ["CSo8NSObject", "Int"]
 - ["CSo8NSObject", "NSCoder"]
 - !private ["CSo8NSObject", "NSError"]
@@ -598,7 +619,7 @@ depends-member:
 - ["CSo8NSObject", "ReminderDetailViewController"]
 - ["CSo8NSObject", "ReminderItem"]
 - ["CSo8NSObject", "String"]
-- !private ["CSo8NSObject", "UIApplication"]
+- ["CSo8NSObject", "UIApplication"]
 - !private ["CSo8NSObject", "UILabel"]
 - !private ["CSo8NSObject", "UINavigationController"]
 - ["CSo8NSObject", "UIStoryboardSegue"]
@@ -608,11 +629,12 @@ depends-member:
 - !private ["CSo8NSObject", "UITableViewRowAnimation"]
 - ["CSo8NSObject", "addReminderItemViewController"]
 - ["CSo8NSObject", "addReminderItemViewControllerDidCancel"]
+- ["CSo8NSObject", "appDelegate"]
 - !private ["CSo8NSObject", "cellForRowAtIndexPath"]
 - ["CSo8NSObject", "configureCheckmarkForCell"]
 - ["CSo8NSObject", "configureTextForCell"]
 - ["CSo8NSObject", "dataFilePath"]
-- !private ["CSo8NSObject", "delegate"]
+- ["CSo8NSObject", "delegate"]
 - !private ["CSo8NSObject", "deleteRowsAtIndexPaths"]
 - !private ["CSo8NSObject", "dequeueReusableCellWithIdentifier"]
 - !private ["CSo8NSObject", "deselectRowAtIndexPath"]
@@ -634,8 +656,10 @@ depends-member:
 - !private ["CSo8NSObject", "reminderToEdit"]
 - ["CSo8NSObject", "reminders"]
 - !private ["CSo8NSObject", "row"]
+- !private ["CSo8NSObject", "saveContext"]
 - !private ["CSo8NSObject", "selectRowAtIndexPath"]
-- !private ["CSo8NSObject", "sharedApplication"]
+- !private ["CSo8NSObject", "setValue"]
+- ["CSo8NSObject", "sharedApplication"]
 - !private ["CSo8NSObject", "stringByAppendingPathComponent"]
 - ["CSo8NSObject", "tableView"]
 - !private ["CSo8NSObject", "text"]
@@ -650,16 +674,17 @@ depends-member:
 - ["PSo16NSObjectProtocol", "NSManagedObject"]
 - !private ["PSo16NSObjectProtocol", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo16NSObjectProtocol", "ReminderItem"]
-- !private ["PSo16NSObjectProtocol", "UIApplication"]
+- ["PSo16NSObjectProtocol", "UIApplication"]
 - !private ["PSo16NSObjectProtocol", "UITableViewCellEditingStyle"]
 - !private ["PSo16NSObjectProtocol", "UITableViewRowAnimation"]
 - ["PSo16NSObjectProtocol", "addReminderItemViewController"]
 - ["PSo16NSObjectProtocol", "addReminderItemViewControllerDidCancel"]
+- ["PSo16NSObjectProtocol", "appDelegate"]
 - !private ["PSo16NSObjectProtocol", "cellForRowAtIndexPath"]
 - ["PSo16NSObjectProtocol", "configureCheckmarkForCell"]
 - ["PSo16NSObjectProtocol", "configureTextForCell"]
 - ["PSo16NSObjectProtocol", "dataFilePath"]
-- !private ["PSo16NSObjectProtocol", "delegate"]
+- ["PSo16NSObjectProtocol", "delegate"]
 - !private ["PSo16NSObjectProtocol", "deleteRowsAtIndexPaths"]
 - !private ["PSo16NSObjectProtocol", "dequeueReusableCellWithIdentifier"]
 - !private ["PSo16NSObjectProtocol", "deselectRowAtIndexPath"]
@@ -681,8 +706,10 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "reminderToEdit"]
 - ["PSo16NSObjectProtocol", "reminders"]
 - !private ["PSo16NSObjectProtocol", "row"]
+- !private ["PSo16NSObjectProtocol", "saveContext"]
 - !private ["PSo16NSObjectProtocol", "selectRowAtIndexPath"]
-- !private ["PSo16NSObjectProtocol", "sharedApplication"]
+- !private ["PSo16NSObjectProtocol", "setValue"]
+- ["PSo16NSObjectProtocol", "sharedApplication"]
 - !private ["PSo16NSObjectProtocol", "stringByAppendingPathComponent"]
 - ["PSo16NSObjectProtocol", "tableView"]
 - !private ["PSo16NSObjectProtocol", "text"]
@@ -706,7 +733,7 @@ depends-member:
 - ["Ps21NilLiteralConvertible", "Some"]
 - !private ["Ps13OptionSetType", "UserDomainMask"]
 - ["Sq", "Some"]
-- !private ["Sq", "deinit"]
+- ["Sq", "deinit"]
 - !private ["Ps16OutputStreamType", "init"]
 - ["Ps21RandomAccessIndexType", "Distance"]
 - ["Ps21RandomAccessIndexType", "IntegerLiteralType"]
@@ -734,11 +761,12 @@ depends-member:
 - ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "NSManagedObject"]
 - !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "NSSearchPathForDirectoriesInDomains"]
 - !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "ReminderItem"]
-- !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "UIApplication"]
+- ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "UIApplication"]
 - !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "UITableViewCellEditingStyle"]
 - !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "UITableViewRowAnimation"]
 - ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "addReminderItemViewController"]
 - ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "addReminderItemViewControllerDidCancel"]
+- !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "appDelegate"]
 - !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "configureCheckmarkForCell"]
 - !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "configureTextForCell"]
 - !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "dismissViewControllerAnimated"]
@@ -749,15 +777,13 @@ depends-member:
 - !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "reminders"]
 - !private ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "tableView"]
 - ["P14SimpleReminder36ReminderDetailViewControllerDelegate", ""]
-- !private ["C14SimpleReminder12ReminderItem", "checkmarkToggled"]
 - ["C14SimpleReminder12ReminderItem", "deinit"]
 - !private ["C14SimpleReminder12ReminderItem", "init"]
 - !private ["C14SimpleReminder12ReminderItem", "isChecked"]
 - !private ["C14SimpleReminder12ReminderItem", "text"]
 - ["C14SimpleReminder26ReminderListViewController", "AnyObject"]
-- !private ["C14SimpleReminder26ReminderListViewController", "AppDelegate"]
+- ["C14SimpleReminder26ReminderListViewController", "AppDelegate"]
 - ["C14SimpleReminder26ReminderListViewController", "Bool"]
-- !private ["C14SimpleReminder26ReminderListViewController", "BooleanType"]
 - ["C14SimpleReminder26ReminderListViewController", "Int"]
 - ["C14SimpleReminder26ReminderListViewController", "NSCoder"]
 - !private ["C14SimpleReminder26ReminderListViewController", "NSError"]
@@ -769,7 +795,7 @@ depends-member:
 - ["C14SimpleReminder26ReminderListViewController", "ReminderDetailViewController"]
 - ["C14SimpleReminder26ReminderListViewController", "ReminderItem"]
 - ["C14SimpleReminder26ReminderListViewController", "String"]
-- !private ["C14SimpleReminder26ReminderListViewController", "UIApplication"]
+- ["C14SimpleReminder26ReminderListViewController", "UIApplication"]
 - !private ["C14SimpleReminder26ReminderListViewController", "UILabel"]
 - !private ["C14SimpleReminder26ReminderListViewController", "UINavigationController"]
 - ["C14SimpleReminder26ReminderListViewController", "UIStoryboardSegue"]
@@ -779,6 +805,7 @@ depends-member:
 - !private ["C14SimpleReminder26ReminderListViewController", "UITableViewRowAnimation"]
 - ["C14SimpleReminder26ReminderListViewController", "addReminderItemViewController"]
 - ["C14SimpleReminder26ReminderListViewController", "addReminderItemViewControllerDidCancel"]
+- ["C14SimpleReminder26ReminderListViewController", "appDelegate"]
 - ["C14SimpleReminder26ReminderListViewController", "configureCheckmarkForCell"]
 - ["C14SimpleReminder26ReminderListViewController", "configureTextForCell"]
 - ["C14SimpleReminder26ReminderListViewController", "dataFilePath"]
@@ -849,11 +876,12 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "NSManagedObject"]
 - !private ["PSo21UIAppearanceContainer", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo21UIAppearanceContainer", "ReminderItem"]
-- !private ["PSo21UIAppearanceContainer", "UIApplication"]
+- ["PSo21UIAppearanceContainer", "UIApplication"]
 - !private ["PSo21UIAppearanceContainer", "UITableViewCellEditingStyle"]
 - !private ["PSo21UIAppearanceContainer", "UITableViewRowAnimation"]
 - ["PSo21UIAppearanceContainer", "addReminderItemViewController"]
 - ["PSo21UIAppearanceContainer", "addReminderItemViewControllerDidCancel"]
+- ["PSo21UIAppearanceContainer", "appDelegate"]
 - !private ["PSo21UIAppearanceContainer", "cellForRowAtIndexPath"]
 - ["PSo21UIAppearanceContainer", "configureCheckmarkForCell"]
 - ["PSo21UIAppearanceContainer", "configureTextForCell"]
@@ -883,19 +911,21 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - !private ["PSo21UIAppearanceContainer", "viewWithTag"]
 - ["PSo21UIAppearanceContainer", ""]
-- !private ["CSo13UIApplication", "delegate"]
-- !private ["CSo13UIApplication", "sharedApplication"]
+- ["CSo13UIApplication", "delegate"]
+- ["CSo13UIApplication", "sharedApplication"]
 - !private ["PSo21UIApplicationDelegate", "managedObjectContext"]
+- !private ["PSo21UIApplicationDelegate", "saveContext"]
 - !private ["PSo18UIContentContainer", "NSFetchRequest"]
 - !private ["PSo18UIContentContainer", "NSIndexPath"]
 - ["PSo18UIContentContainer", "NSManagedObject"]
 - !private ["PSo18UIContentContainer", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo18UIContentContainer", "ReminderItem"]
-- !private ["PSo18UIContentContainer", "UIApplication"]
+- ["PSo18UIContentContainer", "UIApplication"]
 - !private ["PSo18UIContentContainer", "UITableViewCellEditingStyle"]
 - !private ["PSo18UIContentContainer", "UITableViewRowAnimation"]
 - ["PSo18UIContentContainer", "addReminderItemViewController"]
 - ["PSo18UIContentContainer", "addReminderItemViewControllerDidCancel"]
+- ["PSo18UIContentContainer", "appDelegate"]
 - ["PSo18UIContentContainer", "configureCheckmarkForCell"]
 - ["PSo18UIContentContainer", "configureTextForCell"]
 - ["PSo18UIContentContainer", "dataFilePath"]
@@ -941,11 +971,12 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "NSManagedObject"]
 - !private ["PSo18UIFocusEnvironment", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo18UIFocusEnvironment", "ReminderItem"]
-- !private ["PSo18UIFocusEnvironment", "UIApplication"]
+- ["PSo18UIFocusEnvironment", "UIApplication"]
 - !private ["PSo18UIFocusEnvironment", "UITableViewCellEditingStyle"]
 - !private ["PSo18UIFocusEnvironment", "UITableViewRowAnimation"]
 - ["PSo18UIFocusEnvironment", "addReminderItemViewController"]
 - ["PSo18UIFocusEnvironment", "addReminderItemViewControllerDidCancel"]
+- ["PSo18UIFocusEnvironment", "appDelegate"]
 - !private ["PSo18UIFocusEnvironment", "cellForRowAtIndexPath"]
 - ["PSo18UIFocusEnvironment", "configureCheckmarkForCell"]
 - ["PSo18UIFocusEnvironment", "configureTextForCell"]
@@ -979,9 +1010,8 @@ depends-member:
 - !private ["CSo7UILabel", "text"]
 - !private ["CSo22UINavigationController", "topViewController"]
 - ["CSo11UIResponder", "AnyObject"]
-- !private ["CSo11UIResponder", "AppDelegate"]
+- ["CSo11UIResponder", "AppDelegate"]
 - ["CSo11UIResponder", "Bool"]
-- !private ["CSo11UIResponder", "BooleanType"]
 - ["CSo11UIResponder", "Int"]
 - ["CSo11UIResponder", "NSCoder"]
 - !private ["CSo11UIResponder", "NSError"]
@@ -993,7 +1023,7 @@ depends-member:
 - ["CSo11UIResponder", "ReminderDetailViewController"]
 - ["CSo11UIResponder", "ReminderItem"]
 - ["CSo11UIResponder", "String"]
-- !private ["CSo11UIResponder", "UIApplication"]
+- ["CSo11UIResponder", "UIApplication"]
 - !private ["CSo11UIResponder", "UILabel"]
 - !private ["CSo11UIResponder", "UINavigationController"]
 - ["CSo11UIResponder", "UIStoryboardSegue"]
@@ -1003,11 +1033,12 @@ depends-member:
 - !private ["CSo11UIResponder", "UITableViewRowAnimation"]
 - ["CSo11UIResponder", "addReminderItemViewController"]
 - ["CSo11UIResponder", "addReminderItemViewControllerDidCancel"]
+- ["CSo11UIResponder", "appDelegate"]
 - !private ["CSo11UIResponder", "cellForRowAtIndexPath"]
 - ["CSo11UIResponder", "configureCheckmarkForCell"]
 - ["CSo11UIResponder", "configureTextForCell"]
 - ["CSo11UIResponder", "dataFilePath"]
-- !private ["CSo11UIResponder", "delegate"]
+- ["CSo11UIResponder", "delegate"]
 - !private ["CSo11UIResponder", "deleteRowsAtIndexPaths"]
 - !private ["CSo11UIResponder", "dequeueReusableCellWithIdentifier"]
 - !private ["CSo11UIResponder", "deselectRowAtIndexPath"]
@@ -1025,8 +1056,9 @@ depends-member:
 - !private ["CSo11UIResponder", "reloadRowsAtIndexPaths"]
 - !private ["CSo11UIResponder", "reminderToEdit"]
 - ["CSo11UIResponder", "reminders"]
+- !private ["CSo11UIResponder", "saveContext"]
 - !private ["CSo11UIResponder", "selectRowAtIndexPath"]
-- !private ["CSo11UIResponder", "sharedApplication"]
+- ["CSo11UIResponder", "sharedApplication"]
 - ["CSo11UIResponder", "tableView"]
 - !private ["CSo11UIResponder", "text"]
 - !private ["CSo11UIResponder", "topViewController"]
@@ -1047,11 +1079,12 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", "NSManagedObject"]
 - !private ["PSo20UIScrollViewDelegate", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo20UIScrollViewDelegate", "ReminderItem"]
-- !private ["PSo20UIScrollViewDelegate", "UIApplication"]
+- ["PSo20UIScrollViewDelegate", "UIApplication"]
 - !private ["PSo20UIScrollViewDelegate", "UITableViewCellEditingStyle"]
 - !private ["PSo20UIScrollViewDelegate", "UITableViewRowAnimation"]
 - ["PSo20UIScrollViewDelegate", "addReminderItemViewController"]
 - ["PSo20UIScrollViewDelegate", "addReminderItemViewControllerDidCancel"]
+- ["PSo20UIScrollViewDelegate", "appDelegate"]
 - ["PSo20UIScrollViewDelegate", "configureCheckmarkForCell"]
 - ["PSo20UIScrollViewDelegate", "configureTextForCell"]
 - ["PSo20UIScrollViewDelegate", "dataFilePath"]
@@ -1074,11 +1107,12 @@ depends-member:
 - ["PSo16UIStateRestoring", "NSManagedObject"]
 - !private ["PSo16UIStateRestoring", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo16UIStateRestoring", "ReminderItem"]
-- !private ["PSo16UIStateRestoring", "UIApplication"]
+- ["PSo16UIStateRestoring", "UIApplication"]
 - !private ["PSo16UIStateRestoring", "UITableViewCellEditingStyle"]
 - !private ["PSo16UIStateRestoring", "UITableViewRowAnimation"]
 - ["PSo16UIStateRestoring", "addReminderItemViewController"]
 - ["PSo16UIStateRestoring", "addReminderItemViewControllerDidCancel"]
+- ["PSo16UIStateRestoring", "appDelegate"]
 - ["PSo16UIStateRestoring", "configureCheckmarkForCell"]
 - ["PSo16UIStateRestoring", "configureTextForCell"]
 - ["PSo16UIStateRestoring", "dataFilePath"]
@@ -1113,9 +1147,8 @@ depends-member:
 - !private ["OSC27UITableViewCellEditingStyle", "RawValue"]
 - !private ["OSC27UITableViewCellEditingStyle", "deinit"]
 - ["CSo21UITableViewController", "AnyObject"]
-- !private ["CSo21UITableViewController", "AppDelegate"]
+- ["CSo21UITableViewController", "AppDelegate"]
 - ["CSo21UITableViewController", "Bool"]
-- !private ["CSo21UITableViewController", "BooleanType"]
 - ["CSo21UITableViewController", "Int"]
 - ["CSo21UITableViewController", "NSCoder"]
 - !private ["CSo21UITableViewController", "NSError"]
@@ -1127,7 +1160,7 @@ depends-member:
 - ["CSo21UITableViewController", "ReminderDetailViewController"]
 - ["CSo21UITableViewController", "ReminderItem"]
 - ["CSo21UITableViewController", "String"]
-- !private ["CSo21UITableViewController", "UIApplication"]
+- ["CSo21UITableViewController", "UIApplication"]
 - !private ["CSo21UITableViewController", "UILabel"]
 - !private ["CSo21UITableViewController", "UINavigationController"]
 - ["CSo21UITableViewController", "UIStoryboardSegue"]
@@ -1137,6 +1170,7 @@ depends-member:
 - !private ["CSo21UITableViewController", "UITableViewRowAnimation"]
 - ["CSo21UITableViewController", "addReminderItemViewController"]
 - ["CSo21UITableViewController", "addReminderItemViewControllerDidCancel"]
+- ["CSo21UITableViewController", "appDelegate"]
 - ["CSo21UITableViewController", "configureCheckmarkForCell"]
 - ["CSo21UITableViewController", "configureTextForCell"]
 - ["CSo21UITableViewController", "dataFilePath"]
@@ -1159,11 +1193,12 @@ depends-member:
 - ["PSo21UITableViewDataSource", "NSManagedObject"]
 - !private ["PSo21UITableViewDataSource", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo21UITableViewDataSource", "ReminderItem"]
-- !private ["PSo21UITableViewDataSource", "UIApplication"]
+- ["PSo21UITableViewDataSource", "UIApplication"]
 - !private ["PSo21UITableViewDataSource", "UITableViewCellEditingStyle"]
 - !private ["PSo21UITableViewDataSource", "UITableViewRowAnimation"]
 - ["PSo21UITableViewDataSource", "addReminderItemViewController"]
 - ["PSo21UITableViewDataSource", "addReminderItemViewControllerDidCancel"]
+- ["PSo21UITableViewDataSource", "appDelegate"]
 - ["PSo21UITableViewDataSource", "configureCheckmarkForCell"]
 - ["PSo21UITableViewDataSource", "configureTextForCell"]
 - ["PSo21UITableViewDataSource", "dataFilePath"]
@@ -1186,11 +1221,12 @@ depends-member:
 - ["PSo19UITableViewDelegate", "NSManagedObject"]
 - !private ["PSo19UITableViewDelegate", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo19UITableViewDelegate", "ReminderItem"]
-- !private ["PSo19UITableViewDelegate", "UIApplication"]
+- ["PSo19UITableViewDelegate", "UIApplication"]
 - !private ["PSo19UITableViewDelegate", "UITableViewCellEditingStyle"]
 - !private ["PSo19UITableViewDelegate", "UITableViewRowAnimation"]
 - ["PSo19UITableViewDelegate", "addReminderItemViewController"]
 - ["PSo19UITableViewDelegate", "addReminderItemViewControllerDidCancel"]
+- ["PSo19UITableViewDelegate", "appDelegate"]
 - ["PSo19UITableViewDelegate", "configureCheckmarkForCell"]
 - ["PSo19UITableViewDelegate", "configureTextForCell"]
 - ["PSo19UITableViewDelegate", "dataFilePath"]
@@ -1218,11 +1254,12 @@ depends-member:
 - ["PSo18UITraitEnvironment", "NSManagedObject"]
 - !private ["PSo18UITraitEnvironment", "NSSearchPathForDirectoriesInDomains"]
 - !private ["PSo18UITraitEnvironment", "ReminderItem"]
-- !private ["PSo18UITraitEnvironment", "UIApplication"]
+- ["PSo18UITraitEnvironment", "UIApplication"]
 - !private ["PSo18UITraitEnvironment", "UITableViewCellEditingStyle"]
 - !private ["PSo18UITraitEnvironment", "UITableViewRowAnimation"]
 - ["PSo18UITraitEnvironment", "addReminderItemViewController"]
 - ["PSo18UITraitEnvironment", "addReminderItemViewControllerDidCancel"]
+- ["PSo18UITraitEnvironment", "appDelegate"]
 - !private ["PSo18UITraitEnvironment", "cellForRowAtIndexPath"]
 - ["PSo18UITraitEnvironment", "configureCheckmarkForCell"]
 - ["PSo18UITraitEnvironment", "configureTextForCell"]
@@ -1264,9 +1301,8 @@ depends-member:
 - !private ["CSo6UIView", "text"]
 - !private ["CSo6UIView", "viewWithTag"]
 - ["CSo16UIViewController", "AnyObject"]
-- !private ["CSo16UIViewController", "AppDelegate"]
+- ["CSo16UIViewController", "AppDelegate"]
 - ["CSo16UIViewController", "Bool"]
-- !private ["CSo16UIViewController", "BooleanType"]
 - ["CSo16UIViewController", "Int"]
 - ["CSo16UIViewController", "NSCoder"]
 - !private ["CSo16UIViewController", "NSError"]
@@ -1278,7 +1314,7 @@ depends-member:
 - ["CSo16UIViewController", "ReminderDetailViewController"]
 - ["CSo16UIViewController", "ReminderItem"]
 - ["CSo16UIViewController", "String"]
-- !private ["CSo16UIViewController", "UIApplication"]
+- ["CSo16UIViewController", "UIApplication"]
 - !private ["CSo16UIViewController", "UILabel"]
 - !private ["CSo16UIViewController", "UINavigationController"]
 - ["CSo16UIViewController", "UIStoryboardSegue"]
@@ -1288,6 +1324,7 @@ depends-member:
 - !private ["CSo16UIViewController", "UITableViewRowAnimation"]
 - ["CSo16UIViewController", "addReminderItemViewController"]
 - ["CSo16UIViewController", "addReminderItemViewControllerDidCancel"]
+- ["CSo16UIViewController", "appDelegate"]
 - ["CSo16UIViewController", "configureCheckmarkForCell"]
 - ["CSo16UIViewController", "configureTextForCell"]
 - ["CSo16UIViewController", "dataFilePath"]
@@ -1472,7 +1509,7 @@ depends-nominal:
 - !private "PSo29UIAccessibilityIdentification"
 - !private "PSo12UIAppearance"
 - "PSo21UIAppearanceContainer"
-- !private "CSo13UIApplication"
+- "CSo13UIApplication"
 - !private "PSo21UIApplicationDelegate"
 - "PSo18UIContentContainer"
 - !private "PSo17UICoordinateSpace"
@@ -1532,4 +1569,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreData.swiftmodule"
-interface-hash: "2ad819c3826687e7fc259c7317101972"
+interface-hash: "d764bb313607e0940a258955cf2230be"

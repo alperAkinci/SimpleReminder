@@ -14,7 +14,7 @@ protocol ReminderDetailViewControllerDelegate : class {
     
     func addReminderItemViewController(sender : ReminderDetailViewController , didFinishAddingItem item : NSManagedObject)
     
-    func addReminderItemViewController(sender : ReminderDetailViewController , didFinishEditingItem item : ReminderItem)
+    func addReminderItemViewController(sender : ReminderDetailViewController , didFinishEditingItem item : NSManagedObject)
     
     func addReminderItemViewControllerDidCancel(sender : ReminderDetailViewController)
     
@@ -25,7 +25,7 @@ protocol ReminderDetailViewControllerDelegate : class {
 
 class ReminderDetailViewController: UITableViewController , UITextFieldDelegate {
     
-    var reminderToEdit : ReminderItem?
+    var reminderToEdit : NSManagedObject?
     
     weak var delegate : ReminderDetailViewControllerDelegate?
     
@@ -43,7 +43,8 @@ class ReminderDetailViewController: UITableViewController , UITextFieldDelegate 
         
         if let editItem = reminderToEdit{
         
-            editItem.text = textField.text!
+            editItem.setValue(textField.text!, forKey: "text")
+            
             delegate?.addReminderItemViewController(self, didFinishEditingItem: editItem)
         
         }else{
@@ -80,7 +81,7 @@ class ReminderDetailViewController: UITableViewController , UITextFieldDelegate 
         if let editItem = reminderToEdit {
             
             title = "Edit Reminder"
-            textField.text = editItem.text
+            textField.text = editItem.valueForKey("text") as? String
         
         }
     }

@@ -123,16 +123,17 @@ SWIFT_CLASS("_TtC14SimpleReminder11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSManagedObject;
 @class UIBarButtonItem;
 @class UITableView;
 @class NSIndexPath;
 @class UITextField;
-@class NSManagedObject;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC14SimpleReminder28ReminderDetailViewController")
 @interface ReminderDetailViewController : UITableViewController <UITextFieldDelegate>
+@property (nonatomic, strong) NSManagedObject * _Nullable reminderToEdit;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified textField;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem * _Null_unspecified doneBtn;
 - (IBAction)doneBtnPressed:(id _Nonnull)sender;
@@ -153,6 +154,7 @@ SWIFT_CLASS("_TtC14SimpleReminder28ReminderDetailViewController")
 
 SWIFT_CLASS("_TtC14SimpleReminder26ReminderListViewController")
 @interface ReminderListViewController : UITableViewController
+@property (nonatomic, readonly, strong) AppDelegate * _Nonnull appDelegate;
 @property (nonatomic, copy) NSArray<NSManagedObject *> * _Nonnull reminders;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
@@ -170,6 +172,7 @@ SWIFT_CLASS("_TtC14SimpleReminder26ReminderListViewController")
 - (void)fetchReminders;
 - (void)addReminderItemViewControllerDidCancel:(ReminderDetailViewController * _Nonnull)sender;
 - (void)addReminderItemViewController:(ReminderDetailViewController * _Nonnull)sender didFinishAddingItem:(NSManagedObject * _Nonnull)item;
+- (void)addReminderItemViewController:(ReminderDetailViewController * _Nonnull)sender didFinishEditingItem:(NSManagedObject * _Nonnull)item;
 @end
 
 #pragma clang diagnostic pop

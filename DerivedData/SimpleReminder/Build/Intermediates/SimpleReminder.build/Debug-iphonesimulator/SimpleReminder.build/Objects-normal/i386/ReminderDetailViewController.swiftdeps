@@ -9,40 +9,42 @@ provides-member:
 - ["P14SimpleReminder36ReminderDetailViewControllerDelegate", ""]
 - ["C14SimpleReminder28ReminderDetailViewController", ""]
 provides-dynamic-lookup:
-- "saveReminder"
-- "viewDidLoad"
 - "viewDidAppear"
+- "viewDidLoad"
 - "doneBtnPressed"
 - "doneButtonActivationAtTheStart"
+- "saveReminder"
+- "reminderToEdit"
+- "doneBtn"
+- "cancelBtnPressed"
 - "textField"
 - "textField"
 - "tableView"
-- "cancelBtnPressed"
-- "doneBtn"
 depends-top-level:
-- !private "&&"
-- "ReminderItem"
-- "UIBarButtonItem"
-- "UITextField"
-- "UITableView"
-- !private "print"
-- "Bool"
 - "AnyObject"
-- "NSRange"
-- !private "UIApplication"
-- !private "=="
-- "UITextFieldDelegate"
+- "Bool"
 - !private "NSError"
-- !private "!"
-- !private "AppDelegate"
-- "NSIndexPath"
-- "ReminderDetailViewControllerDelegate"
-- !private "BooleanLiteralType"
-- "UITableViewController"
-- "String"
+- !private "StringLiteralType"
+- !private "UIApplication"
 - "NSManagedObject"
+- !private "!"
+- "String"
+- !private "=="
+- "UITextField"
+- !private "UnicodeScalarType"
 - "ReminderDetailViewController"
+- !private "&&"
+- "NSRange"
+- "UITableView"
+- "UIBarButtonItem"
+- !private "AppDelegate"
+- !private "BooleanLiteralType"
+- "NSIndexPath"
+- !private "print"
 - !private "NSEntityDescription"
+- "UITableViewController"
+- "UITextFieldDelegate"
+- "ReminderDetailViewControllerDelegate"
 depends-member:
 - !private ["Ps9AnyObject", "NSEntityDescription"]
 - !private ["Ps9AnyObject", "NSManagedObject"]
@@ -78,6 +80,7 @@ depends-member:
 - ["Ps9AnyObject", "textFieldShouldReturn"]
 - !private ["Ps9AnyObject", "title"]
 - !private ["Ps9AnyObject", "userInfo"]
+- !private ["Ps9AnyObject", "valueForKey"]
 - ["Ps9AnyObject", "viewDidAppear"]
 - ["Ps9AnyObject", "viewDidLoad"]
 - ["Ps9AnyObject", ""]
@@ -120,6 +123,7 @@ depends-member:
 - ["Ps11CVarArgType", "textFieldShouldReturn"]
 - !private ["Ps11CVarArgType", "title"]
 - !private ["Ps11CVarArgType", "userInfo"]
+- !private ["Ps11CVarArgType", "valueForKey"]
 - ["Ps11CVarArgType", "viewDidAppear"]
 - ["Ps11CVarArgType", "viewDidLoad"]
 - ["Ps11CVarArgType", ""]
@@ -171,6 +175,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "textFieldShouldReturn"]
 - !private ["Ps28CustomDebugStringConvertible", "title"]
 - !private ["Ps28CustomDebugStringConvertible", "userInfo"]
+- !private ["Ps28CustomDebugStringConvertible", "valueForKey"]
 - ["Ps28CustomDebugStringConvertible", "viewDidAppear"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", ""]
@@ -208,6 +213,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "textFieldShouldReturn"]
 - !private ["Ps23CustomStringConvertible", "title"]
 - !private ["Ps23CustomStringConvertible", "userInfo"]
+- !private ["Ps23CustomStringConvertible", "valueForKey"]
 - ["Ps23CustomStringConvertible", "viewDidAppear"]
 - ["Ps23CustomStringConvertible", "viewDidLoad"]
 - ["Ps23CustomStringConvertible", ""]
@@ -247,6 +253,7 @@ depends-member:
 - ["Ps9Equatable", "textFieldShouldReturn"]
 - !private ["Ps9Equatable", "title"]
 - !private ["Ps9Equatable", "userInfo"]
+- !private ["Ps9Equatable", "valueForKey"]
 - ["Ps9Equatable", "viewDidAppear"]
 - ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", ""]
@@ -291,6 +298,7 @@ depends-member:
 - ["Ps8Hashable", "textFieldShouldReturn"]
 - !private ["Ps8Hashable", "title"]
 - !private ["Ps8Hashable", "userInfo"]
+- !private ["Ps8Hashable", "valueForKey"]
 - ["Ps8Hashable", "viewDidAppear"]
 - ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", ""]
@@ -381,6 +389,7 @@ depends-member:
 - !private ["PSo9NSLocking", "save"]
 - !private ["CSo15NSManagedObject", "init"]
 - !private ["CSo15NSManagedObject", "setValue"]
+- !private ["CSo15NSManagedObject", "valueForKey"]
 - !private ["CSo22NSManagedObjectContext", "save"]
 - !private ["PSo16NSMutableCopying", "characters"]
 - !private ["PSo16NSMutableCopying", "init"]
@@ -394,7 +403,6 @@ depends-member:
 - ["CSo8NSObject", "NSManagedObject"]
 - ["CSo8NSObject", "NSRange"]
 - ["CSo8NSObject", "ReminderDetailViewControllerDelegate"]
-- ["CSo8NSObject", "ReminderItem"]
 - ["CSo8NSObject", "String"]
 - !private ["CSo8NSObject", "UIApplication"]
 - ["CSo8NSObject", "UIBarButtonItem"]
@@ -430,6 +438,7 @@ depends-member:
 - ["CSo8NSObject", "textFieldShouldReturn"]
 - !private ["CSo8NSObject", "title"]
 - !private ["CSo8NSObject", "userInfo"]
+- !private ["CSo8NSObject", "valueForKey"]
 - ["CSo8NSObject", "viewDidAppear"]
 - ["CSo8NSObject", "viewDidLoad"]
 - !private ["PSo16NSObjectProtocol", "NSEntityDescription"]
@@ -465,6 +474,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "textFieldShouldReturn"]
 - !private ["PSo16NSObjectProtocol", "title"]
 - !private ["PSo16NSObjectProtocol", "userInfo"]
+- !private ["PSo16NSObjectProtocol", "valueForKey"]
 - ["PSo16NSObjectProtocol", "viewDidAppear"]
 - ["PSo16NSObjectProtocol", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", ""]
@@ -496,7 +506,6 @@ depends-member:
 - ["C14SimpleReminder28ReminderDetailViewController", "NSManagedObject"]
 - ["C14SimpleReminder28ReminderDetailViewController", "NSRange"]
 - ["C14SimpleReminder28ReminderDetailViewController", "ReminderDetailViewControllerDelegate"]
-- ["C14SimpleReminder28ReminderDetailViewController", "ReminderItem"]
 - ["C14SimpleReminder28ReminderDetailViewController", "String"]
 - !private ["C14SimpleReminder28ReminderDetailViewController", "UIApplication"]
 - ["C14SimpleReminder28ReminderDetailViewController", "UIBarButtonItem"]
@@ -526,10 +535,8 @@ depends-member:
 - ["C14SimpleReminder28ReminderDetailViewController", "viewDidLoad"]
 - ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "NSManagedObject"]
 - ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "ReminderDetailViewController"]
-- ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "ReminderItem"]
 - ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "addReminderItemViewController"]
 - ["P14SimpleReminder36ReminderDetailViewControllerDelegate", "addReminderItemViewControllerDidCancel"]
-- !private ["C14SimpleReminder12ReminderItem", "text"]
 - !private ["Ps12SequenceType", "Generator"]
 - !private ["Ps12SequenceType", "Index"]
 - !private ["Ps12SequenceType", "SubSequence"]
@@ -657,7 +664,6 @@ depends-member:
 - ["CSo11UIResponder", "NSManagedObject"]
 - ["CSo11UIResponder", "NSRange"]
 - ["CSo11UIResponder", "ReminderDetailViewControllerDelegate"]
-- ["CSo11UIResponder", "ReminderItem"]
 - ["CSo11UIResponder", "String"]
 - !private ["CSo11UIResponder", "UIApplication"]
 - ["CSo11UIResponder", "UIBarButtonItem"]
@@ -747,7 +753,6 @@ depends-member:
 - ["CSo21UITableViewController", "NSManagedObject"]
 - ["CSo21UITableViewController", "NSRange"]
 - ["CSo21UITableViewController", "ReminderDetailViewControllerDelegate"]
-- ["CSo21UITableViewController", "ReminderItem"]
 - ["CSo21UITableViewController", "String"]
 - !private ["CSo21UITableViewController", "UIApplication"]
 - ["CSo21UITableViewController", "UIBarButtonItem"]
@@ -888,7 +893,6 @@ depends-member:
 - ["CSo16UIViewController", "NSManagedObject"]
 - ["CSo16UIViewController", "NSRange"]
 - ["CSo16UIViewController", "ReminderDetailViewControllerDelegate"]
-- ["CSo16UIViewController", "ReminderItem"]
 - ["CSo16UIViewController", "String"]
 - !private ["CSo16UIViewController", "UIApplication"]
 - ["CSo16UIViewController", "UIBarButtonItem"]
@@ -1010,7 +1014,6 @@ depends-nominal:
 - !private "Ps30RangeReplaceableCollectionType"
 - "C14SimpleReminder28ReminderDetailViewController"
 - "P14SimpleReminder36ReminderDetailViewControllerDelegate"
-- !private "C14SimpleReminder12ReminderItem"
 - !private "Ps12SequenceType"
 - !private "Ps17SignedIntegerType"
 - !private "Ps16SignedNumberType"
@@ -1076,4 +1079,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreData.swiftmodule"
-interface-hash: "799c7cfcae502baa26e16f0086abd69f"
+interface-hash: "1d3ca12f819abe8a3622e61810125612"
